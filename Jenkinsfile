@@ -1,8 +1,9 @@
+@Library ('folio_jenkins_shared_libs') _
 
 buildNPM {
   publishModDescriptor = 'yes'
-  runLint = 'yes'
+  runRegression = 'no'
+  runLint = 'no'
   runSonarqube = true
-  runTest = 'yes'
-  stripesPlatform = 'platform-core'
+  runTest = 'no'
 }
