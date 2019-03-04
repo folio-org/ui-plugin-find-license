@@ -1,74 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '@folio/stripes/components';
-import className from 'classnames';
-
-import css from './LicenseSearch.css';
 import LicenseSearchModal from './LicenseSearchModal';
 
-export default class LicenseSearch extends React.Component {
-  constructor(props) {
-    super(props);
+const triggerId = 'find-agreement-trigger';
+class LicenseSearch extends React.Component {
+  static propTypes = {
+    renderTrigger: PropTypes.func,
+  };
 
-    this.state = {
-      openModal: false,
-    };
+  state = {
+    open: false,
+  };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+  openModal = () => {
+    this.setState({ open: true });
   }
 
-  getStyle() {
-    const { marginBottom0, marginTop0 } = this.props;
-    return className(
-      css.searchControl,
-      { [css.marginBottom0]: marginBottom0 },
-      { [css.marginTop0]: marginTop0 },
+  closeModal = () => {
+    this.setState({ open: false });
+  }
+
+  renderDefaultTrigger() {
+    return (
+      <Button
+        id={triggerId}
+        buttonStyle="primary noRightRadius"
+        onClick={this.openModal}
+      >
+        <Icon icon="search" color="#fff" />
+      </Button>
     );
   }
 
-  openModal() {
-    this.setState({
-      openModal: true,
-    });
-  }
+  renderTriggerButton() {
+    const {
+      renderTrigger,
+    } = this.props;
 
-  closeModal() {
-    this.setState({
-      openModal: false,
-    });
+    return renderTrigger
+      ? renderTrigger({
+        id: triggerId,
+        onClick: this.openModal,
+      })
+      : this.renderDefaultTrigger();
   }
 
   render() {
     return (
-      <div className={this.getStyle()}>
-        <Button
-          id="clickable-plugin-find-license"
-          key="searchButton"
-          buttonStyle={this.props.searchButtonStyle}
-          onClick={this.openModal}
-          title="Find License"
-          tabIndex="-1"
-        >
-          {this.props.searchLabel ? this.props.searchLabel : <Icon icon="search" color="#fff" />}
-        </Button>
+      <React.Fragment>
+        {this.renderTriggerButton()}
         <LicenseSearchModal
-          openWhen={this.state.openModal}
-          closeCB={this.closeModal}
+          open={this.state.open}
+          onClose={this.closeModal}
           {...this.props}
         />
-      </div>
+      </React.Fragment>
+
     );
   }
 }
 
-LicenseSearch.defaultProps = {
-  searchButtonStyle: 'primary noRightRadius',
-};
-
-LicenseSearch.propTypes = {
-  searchLabel: PropTypes.string,
-  searchButtonStyle: PropTypes.string,
-  marginBottom0: PropTypes.bool,
-  marginTop0: PropTypes.bool,
-};
+export default LicenseSearch;
