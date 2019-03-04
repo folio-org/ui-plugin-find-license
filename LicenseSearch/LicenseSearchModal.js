@@ -17,6 +17,10 @@ export default class LicenseSearchModal extends React.Component {
     dataKey: PropTypes.string,
   };
 
+  static defaultProps = {
+    dataKey: 'find-license',
+  }
+
   constructor(props) {
     super(props);
 
