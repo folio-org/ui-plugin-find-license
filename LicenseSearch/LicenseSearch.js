@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Icon } from '@folio/stripes/components';
 import LicenseSearchModal from './LicenseSearchModal';
 
-const triggerId = 'find-agreement-trigger';
+const triggerId = 'find-license-trigger';
 class LicenseSearch extends React.Component {
   static propTypes = {
     renderTrigger: PropTypes.func,

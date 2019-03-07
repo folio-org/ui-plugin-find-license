@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Licenses } from '@folio/licenses';
 import { Modal } from '@folio/stripes/components';
 
+import packageInfo from '../package';
 import css from './LicenseSearch.css';
 
 export default class LicenseSearchModal extends React.Component {
@@ -34,23 +35,30 @@ export default class LicenseSearchModal extends React.Component {
 
   render() {
     return (
-      <Modal
-        contentClass={css.modalContent}
-        dismissible
-        enforceFocus={false}
-        label={<FormattedMessage id="ui-plugin-find-license.selectLicense" />}
-        onClose={this.props.onClose}
-        open={this.props.open}
-        size="large"
-      >
-        <this.connectedApp
-          {...this.props}
-          browseOnly
-          onComponentWillUnmount={this.props.onClose}
-          onSelectRow={this.selectLicense}
-          showSingleResult={false}
-        />
-      </Modal>
+      <FormattedMessage id="ui-plugin-find-license.selectLicense">
+        {label => (
+          <Modal
+            contentClass={css.modalContent}
+            dismissible
+            enforceFocus={false}
+            id="plugin-find-license-modal"
+            label={label}
+            onClose={this.props.onClose}
+            open={this.props.open}
+            size="large"
+          >
+            <this.connectedApp
+              {...this.props}
+              browseOnly
+              disableRecordCreation
+              onComponentWillUnmount={this.props.onClose}
+              onSelectRow={this.selectLicense}
+              packageInfo={packageInfo}
+              showSingleResult={false}
+            />
+          </Modal>
+        )}
+      </FormattedMessage>
     );
   }
 }
