@@ -13,7 +13,13 @@
   "stripes": {
     "type": "plugin",
     "pluginType": "find-license",
-    "displayName": "ui-plugin-find-license.meta.title"
+    "displayName": "ui-plugin-find-license.meta.title",
+    "home": "?sort=Name&filters=status.Active",
+    "icons": [{
+      "name": "app",
+      "alt": "ERM license functionality for Stripes",
+      "title": "Licenses"
+    }]
   },
   "scripts": {
     "lint": "eslint .",
