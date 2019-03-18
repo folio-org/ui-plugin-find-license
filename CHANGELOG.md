@@ -1,5 +1,11 @@
 # Change history for ui-plugin-find-license
 
+## 3.2.0 (IN PROGRESS)
+
+
+## 3.1.0
+* Updated strings.
+
 ## 3.0.0
 * Updated and changed props to match ui-plugin-find-agreement.
 
