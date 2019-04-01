@@ -25,7 +25,7 @@ of the Module Developer's Guide.
 
 Other [modules](https://dev.folio.org/source-code/#client-side).
 
-See project [UIPFV](https://issues.folio.org/browse/UIPFV)
+See project [ERM](https://issues.folio.org/browse/ERM)
 at the [FOLIO issue tracker](https://dev.folio.org/guidelines/issue-tracker/).
 
 Other FOLIO Developer documentation is at [dev.folio.org](https://dev.folio.org/)
