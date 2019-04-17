@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '@folio/stripes/components';
-import LicenseSearchModal from './LicenseSearchModal';
+import Modal from './Modal';
 
 const triggerId = 'find-license-trigger';
 class LicenseSearch extends React.Component {
@@ -50,7 +50,7 @@ class LicenseSearch extends React.Component {
     return (
       <React.Fragment>
         {this.renderTriggerButton()}
-        <LicenseSearchModal
+        <Modal
           open={this.state.open}
           onClose={this.closeModal}
           {...this.props}
