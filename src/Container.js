@@ -117,7 +117,6 @@ class Container extends React.Component {
           typeValues: get(resources, 'typeValues.records', []),
         }}
         disableRecordCreation
-        initialSearch="?sort=name&filters=status.Active"
         onNeedMoreData={this.handleNeedMoreData}
         onSelectRow={onSelectRow}
         queryGetter={this.queryGetter}
