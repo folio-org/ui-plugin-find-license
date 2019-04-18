@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Licenses } from '@folio/licenses';
 import { Modal } from '@folio/stripes/components';
 
+import Container from './Container';
 import packageInfo from '../package';
 import css from './LicenseSearch.css';
 
@@ -25,7 +25,7 @@ export default class LicenseSearchModal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.connectedApp = props.stripes.connect(Licenses, { dataKey: props.dataKey });
+    this.connectedContainer = props.stripes.connect(Container, { dataKey: props.dataKey });
   }
 
   selectLicense = (e, agreement) => {
@@ -47,14 +47,9 @@ export default class LicenseSearchModal extends React.Component {
             open={this.props.open}
             size="large"
           >
-            <this.connectedApp
+            <this.connectedContainer
               {...this.props}
-              browseOnly
-              disableRecordCreation
-              onComponentWillUnmount={this.props.onClose}
               onSelectRow={this.selectLicense}
-              packageInfo={packageInfo}
-              showSingleResult={false}
             />
           </Modal>
         )}

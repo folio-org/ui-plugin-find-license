@@ -1,4 +1,4 @@
 import React from 'react';
-import LicenseSearch from './LicenseSearch';
+import LicenseSearch from './src/LicenseSearch';
 
 export default props => <LicenseSearch {...props} />;
