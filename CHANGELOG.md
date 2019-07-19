@@ -1,5 +1,8 @@
 # Change history for ui-plugin-find-license
 
+## 3.3.0
+* Removed dependency on ui-licenses
+
 ## 3.2.3
 * Translations
 
