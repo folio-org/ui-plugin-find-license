@@ -5,12 +5,12 @@ import { get } from 'lodash';
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
 import { getSASParams } from '@folio/stripes-erm-components';
 
-import { Licenses } from '@folio/licenses';
+import View from './View';
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
 
-class Container extends React.Component {
+export default class Container extends React.Component {
   static manifest = Object.freeze({
     licenses: {
       type: 'okapi',
@@ -81,6 +81,10 @@ class Container extends React.Component {
     if (this.searchField.current) {
       this.searchField.current.focus();
     }
+
+    this.props.mutator.licenseSearchParams.update({
+      filters: 'status.Active'
+    });
   }
 
   handleNeedMoreData = () => {
@@ -109,23 +113,19 @@ class Container extends React.Component {
     }
 
     return (
-      <Licenses
+      <View
         data={{
           licenses: get(resources, 'licenses.records', []),
           orgRoleValues: get(resources, 'orgRoleValues.records', []),
           statusValues: get(resources, 'statusValues.records', []),
           typeValues: get(resources, 'typeValues.records', []),
         }}
-        disableRecordCreation
         onNeedMoreData={this.handleNeedMoreData}
         onSelectRow={onSelectRow}
         queryGetter={this.queryGetter}
         querySetter={this.querySetter}
         source={this.source}
-        syncToLocationSearch={false}
       />
     );
   }
 }
-
-export default Container;
