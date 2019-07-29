@@ -1,4 +1,13 @@
 {
     "meta.title": "Plugin localizador de licença",
-    "selectLicense": "Selecione a licença"
+    "selectLicense": "Selecione a licença",
+    "licenses": "Licenças",
+    "searchInputLabel": "Pesquisa de licenças",
+    "prop.endDate": "Data final",
+    "prop.name": "Nome",
+    "prop.organization": "Organização",
+    "prop.organizationRole": "Função da organização",
+    "prop.startDate": "Data de início",
+    "prop.status": "Status",
+    "prop.type": "Tipo"
 }
