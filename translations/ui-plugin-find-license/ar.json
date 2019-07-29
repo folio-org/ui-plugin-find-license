@@ -1,4 +1,13 @@
 {
     "meta.title": "باحث الرخصة (برنامج مساعد)",
-    "selectLicense": "قم بتحديد رخصة"
+    "selectLicense": "قم بتحديد رخصة",
+    "licenses": "تراخيص",
+    "searchInputLabel": "بحث التراخيص",
+    "prop.endDate": "تاريخ الانتهاء",
+    "prop.name": "الاسم",
+    "prop.organization": "المؤسسة",
+    "prop.organizationRole": "دور المؤسسة",
+    "prop.startDate": "تاريخ البدء",
+    "prop.status": "الحالة",
+    "prop.type": "النوع"
 }

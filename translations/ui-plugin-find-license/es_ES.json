@@ -1,4 +1,13 @@
 {
     "meta.title": "Plugin del Buscador de Licencias",
-    "selectLicense": "Select license"
+    "selectLicense": "Select license",
+    "licenses": "Licenses",
+    "searchInputLabel": "Search Licenses",
+    "prop.endDate": "End date",
+    "prop.name": "Name",
+    "prop.organization": "Organization",
+    "prop.organizationRole": "Organization role",
+    "prop.startDate": "Start date",
+    "prop.status": "Status",
+    "prop.type": "Type"
 }
