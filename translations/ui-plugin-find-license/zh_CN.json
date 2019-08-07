@@ -2,7 +2,7 @@
     "meta.title": "许可证查找器插件",
     "selectLicense": "选择许可证",
     "licenses": "Licenses",
-    "searchInputLabel": "Search Licenses",
+    "searchInputLabel": "Search licenses",
     "prop.endDate": "End date",
     "prop.name": "Name",
     "prop.organization": "Organization",
