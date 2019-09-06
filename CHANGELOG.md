@@ -1,10 +1,13 @@
 # Change history for ui-plugin-find-license
 
+## 3.3.1 2019-09-06
+* Added translations
+
 ## 3.3.0 2019-07-22
 * Removed dependency on ui-licenses
 
 ## 3.2.3 2019-06-10
-* Translations
+* Added translations
 
 ## 3.2.0 2019-04-29
 * Updated to support ui-licenses v3.0.0
