@@ -4,10 +4,10 @@
     "licenses": "Licenses",
     "searchInputLabel": "Cerca licenze",
     "prop.endDate": "End date",
-    "prop.name": "Name",
+    "prop.name": "Nome",
     "prop.organization": "Organization",
     "prop.organizationRole": "Organization role",
     "prop.startDate": "Start date",
     "prop.status": "Status",
-    "prop.type": "Type"
+    "prop.type": "Tipologia"
 }
