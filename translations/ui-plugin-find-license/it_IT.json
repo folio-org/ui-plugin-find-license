@@ -5,9 +5,9 @@
     "searchInputLabel": "Cerca licenze",
     "prop.endDate": "End date",
     "prop.name": "Nome",
-    "prop.organization": "Organization",
+    "prop.organization": "Organizzazione",
     "prop.organizationRole": "Organization role",
     "prop.startDate": "Start date",
-    "prop.status": "Status",
+    "prop.status": "Stato",
     "prop.type": "Tipologia"
 }
