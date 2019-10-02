@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import { Modal } from '@folio/stripes/components';
 
 import Container from './Container';
-import packageInfo from '../package';
 import css from './LicenseSearch.css';
 
 export default class LicenseSearchModal extends React.Component {

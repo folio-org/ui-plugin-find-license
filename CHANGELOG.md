@@ -1,5 +1,10 @@
 # Change history for ui-plugin-find-license
 
+## 3.4.0 IN PROGRESS
+* Fixed clear button in search box.
+* Added support for licenses interface 2.0
+* Added permission set
+
 ## 3.3.1 2019-09-06
 * Added translations
 
