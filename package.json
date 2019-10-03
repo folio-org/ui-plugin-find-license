@@ -24,7 +24,8 @@
         "visible": true,
         "subPermissions": [
           "licenses.licenses.view",
-          "licenses.orgs.view"
+          "licenses.orgs.view",
+          "licenses.refdata.view"
         ]
       }
     ]
