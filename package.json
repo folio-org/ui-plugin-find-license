@@ -1,6 +1,6 @@
 {
   "name": "@folio/plugin-find-license",
-  "version": "3.3.1",
+  "version": "3.4.0",
   "description": "License-finder for Stripes",
   "repository": "folio-org/ui-plugin-find-license",
   "publishConfig": {
@@ -13,7 +13,21 @@
   "stripes": {
     "type": "plugin",
     "pluginType": "find-license",
-    "displayName": "ui-plugin-find-license.meta.title"
+    "displayName": "ui-plugin-find-license.meta.title",
+    "okapiInterfaces": {
+      "licenses": "1.0 2.0"
+    },
+    "permissionSets": [
+      {
+        "permissionName": "ui-plugin-find-license.search",
+        "displayName": "Find License Plugin: Search licenses",
+        "visible": true,
+        "subPermissions": [
+          "licenses.licenses.view",
+          "licenses.orgs.view"
+        ]
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -28,8 +42,11 @@
     "react-dom": "^16.6.3"
   },
   "dependencies": {
+    "@folio/stripes-erm-components": "^1.4.0||^2.0.0",
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.0"
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.0",
+    "react-intl": "^2.4.0"
   },
   "peerDependencies": {
     "@folio/stripes": "^2.0.0",
