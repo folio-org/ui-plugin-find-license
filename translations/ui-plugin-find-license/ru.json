@@ -5,9 +5,9 @@
     "searchInputLabel": "Search licenses",
     "prop.endDate": "End date",
     "prop.name": "Name",
-    "prop.organization": "Organization",
+    "prop.organization": "Организация",
     "prop.organizationRole": "Organization role",
-    "prop.startDate": "Start date",
-    "prop.status": "Status",
-    "prop.type": "Type"
+    "prop.startDate": "Дата начала",
+    "prop.status": "Статус",
+    "prop.type": "Тип"
 }
