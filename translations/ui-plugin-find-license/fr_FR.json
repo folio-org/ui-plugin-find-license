@@ -2,12 +2,12 @@
     "meta.title": "License Finder Plugin",
     "selectLicense": "Select license",
     "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
+    "searchInputLabel": "Rechercher des licences",
     "prop.endDate": "Date de fin",
     "prop.name": "Name",
     "prop.organization": "Organization",
     "prop.organizationRole": "Rôle de l'organisation",
     "prop.startDate": "Date de début",
-    "prop.status": "Status",
+    "prop.status": "Statut",
     "prop.type": "Type"
 }
