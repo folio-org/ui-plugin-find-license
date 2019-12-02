@@ -1,8 +1,8 @@
 {
     "meta.title": "License Finder Plugin",
-    "selectLicense": "Select license",
-    "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
+    "selectLicense": "Выберите лицензию",
+    "licenses": "Лицензии",
+    "searchInputLabel": "Поиск лицензий",
     "prop.endDate": "End date",
     "prop.name": "Name",
     "prop.organization": "Организация",
