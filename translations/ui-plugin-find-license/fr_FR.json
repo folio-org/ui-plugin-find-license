@@ -1,6 +1,6 @@
 {
-    "meta.title": "License Finder Plugin",
-    "selectLicense": "Select license",
+    "meta.title": "Recherche de licence (plugin)",
+    "selectLicense": "Sélectionner une licence",
     "licenses": "Licences",
     "searchInputLabel": "Rechercher des licences",
     "prop.endDate": "Date de fin",
