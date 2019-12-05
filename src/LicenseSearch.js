@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '@folio/stripes/components';
+import contains from 'dom-helpers/query/contains';
 import Modal from './Modal';
 
 const triggerId = 'find-license-trigger';
@@ -9,16 +10,28 @@ class LicenseSearch extends React.Component {
     renderTrigger: PropTypes.func,
   };
 
-  state = {
-    open: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.modalRef = React.createRef();
+    this.modalTrigger = React.createRef();
+    this.state = {
+      open: false,
+    };
+  }
 
   openModal = () => {
     this.setState({ open: true });
   }
 
   closeModal = () => {
-    this.setState({ open: false });
+    this.setState({ open: false }, () => {
+      if (this.modalRef.current && this.modalTrigger.current) {
+        if (contains(this.modalRef.current, document.activeElement)) {
+          this.modalTrigger.current.focus();
+        }
+      }
+    });
   }
 
   renderDefaultTrigger() {
@@ -26,6 +39,7 @@ class LicenseSearch extends React.Component {
       <Button
         id={triggerId}
         buttonStyle="primary noRightRadius"
+        buttonRef={this.modalTrigger}
         onClick={this.openModal}
       >
         <Icon icon="search" color="#fff" />
@@ -42,6 +56,7 @@ class LicenseSearch extends React.Component {
       ? renderTrigger({
         id: triggerId,
         onClick: this.openModal,
+        buttonRef: this.modalTrigger,
       })
       : this.renderDefaultTrigger();
   }
@@ -51,6 +66,7 @@ class LicenseSearch extends React.Component {
       <React.Fragment>
         {this.renderTriggerButton()}
         <Modal
+          modalRef={this.modalRef}
           open={this.state.open}
           onClose={this.closeModal}
           {...this.props}

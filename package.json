@@ -45,6 +45,7 @@
   "dependencies": {
     "@folio/stripes-erm-components": "^1.4.0||^2.0.0",
     "classnames": "^2.2.5",
+    "dom-helpers": "^3.4.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.0",
     "react-intl": "^2.4.0"
