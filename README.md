@@ -19,7 +19,7 @@ of the Module Developer's Guide.
 --- | --- | --- | --- |
 | `onLicenseSelected` | func: (license) => {} | Callback fired when a user clicks a license | Yes |
 | `dataKey` | string | Optional `dataKey` passed to stripes/connect when creating the connected Licenses component. |  |
-| `renderTrigger` | func: ({ triggerId, onClick }) => {} | Optional render function for the button to open the License search modal. The `onClick` prop should be called when the trigger is clicked (assuming it is a Button). | |
+| `renderTrigger` | func: ({ triggerId, onClick }) => {} | Optional render function for the button to open the License search modal. The `onClick` prop should be called when the trigger is clicked (assuming it is a Button). The `buttonRef` prop ensures that the trigger button is brought back into focus once the lookup modal is closed| |
 
 ## Additional information
 
