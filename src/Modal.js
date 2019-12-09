@@ -8,13 +8,14 @@ import css from './LicenseSearch.css';
 
 export default class LicenseSearchModal extends React.Component {
   static propTypes = {
-    stripes: PropTypes.shape({
-      connect: PropTypes.func.isRequired,
-    }),
+    dataKey: PropTypes.string,
+    modalRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
     onLicenseSelected: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     open: PropTypes.bool,
-    dataKey: PropTypes.string,
+    stripes: PropTypes.shape({
+      connect: PropTypes.func.isRequired,
+    }),
   };
 
   static defaultProps = {
