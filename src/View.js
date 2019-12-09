@@ -78,8 +78,7 @@ export default class View extends React.Component {
     const { rowClass, rowData, rowIndex, rowProps = {}, cells } = row;
 
     return (
-      <div
-        aria-rowindex={rowIndex + 2}
+      <button
         className={rowClass}
         data-label={[
           rowData.name,
@@ -87,11 +86,11 @@ export default class View extends React.Component {
           this.formatter.status(rowData),
         ].join('...')}
         key={`row-${rowIndex}`}
-        role="row"
+        type="button"
         {...rowProps}
       >
         {cells}
-      </div>
+      </button>
     );
   }
 
@@ -205,7 +204,7 @@ export default class View extends React.Component {
                         {/* TODO: Use forthcoming <SearchGroup> or similar component */}
                         <div className={css.searchGroupWrap}>
                           <FormattedMessage id="ui-plugin-find-license.searchInputLabel">
-                            { ariaLabel => (
+                            {ariaLabel => (
                               <SearchField
                                 aria-label={ariaLabel}
                                 autoFocus

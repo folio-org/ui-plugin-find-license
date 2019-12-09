@@ -24,6 +24,7 @@ export default class LicenseSearchModal extends React.Component {
   constructor(props) {
     super(props);
 
+    this.modalRef = props.modalRef || React.createRef();
     this.connectedContainer = props.stripes.connect(Container, { dataKey: props.dataKey });
   }
 
@@ -44,6 +45,7 @@ export default class LicenseSearchModal extends React.Component {
             label={label}
             onClose={this.props.onClose}
             open={this.props.open}
+            ref={this.modalRef}
             size="large"
           >
             <this.connectedContainer
