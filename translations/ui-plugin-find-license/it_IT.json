@@ -3,11 +3,11 @@
     "selectLicense": "Seleziona licenza",
     "licenses": "Licenze",
     "searchInputLabel": "Cerca licenze",
-    "prop.endDate": "End date",
+    "prop.endDate": "Data di fine",
     "prop.name": "Nome",
     "prop.organization": "Organizzazione",
-    "prop.organizationRole": "Organization role",
-    "prop.startDate": "Start date",
+    "prop.organizationRole": "Ruolo organizzativo",
+    "prop.startDate": "Data di inizio",
     "prop.status": "Stato",
     "prop.type": "Tipologia"
 }
