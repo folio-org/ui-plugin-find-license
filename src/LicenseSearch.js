@@ -63,7 +63,7 @@ class LicenseSearch extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.renderTriggerButton()}
         <Modal
           modalRef={this.modalRef}
@@ -71,7 +71,7 @@ class LicenseSearch extends React.Component {
           onClose={this.closeModal}
           {...this.props}
         />
-      </React.Fragment>
+      </>
 
     );
   }
