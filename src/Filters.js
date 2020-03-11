@@ -86,12 +86,12 @@ export default class LicenseFilters extends React.Component {
         separator={false}
       >
         <OrganizationSelection
-          path="licenses/org"
           input={{
             name: 'license-orgs-filter',
             onChange: value => this.props.filterHandlers.state({ ...activeFilters, orgs: [value] }),
             value: orgFilters[0] || '',
           }}
+          path="licenses/org"
         />
       </Accordion>
     );
@@ -120,8 +120,8 @@ export default class LicenseFilters extends React.Component {
         <Selection
           dataOptions={dataOptions}
           disabled={orgFilters.length === 0}
-          value={roleFilters[0] || ''}
           onChange={value => this.props.filterHandlers.state({ ...activeFilters, role: [value] })}
+          value={roleFilters[0] || ''}
         />
       </Accordion>
     );

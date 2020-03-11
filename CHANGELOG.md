@@ -1,5 +1,10 @@
 # Change history for ui-plugin-find-license
 
+## 3.5.0 2020-03-11
+* Accessibility fixes
+* Added translations
+* Update to Stripes 3.0
+
 ## 3.4.0 2019-12-02
 * Fixed clear button in search box.
 * Added support for licenses interface 2.0

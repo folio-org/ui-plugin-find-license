@@ -39,6 +39,7 @@ export default class LicenseSearchModal extends React.Component {
       <FormattedMessage id="ui-plugin-find-license.selectLicense">
         {label => (
           <Modal
+            ref={this.modalRef}
             contentClass={css.modalContent}
             dismissible
             enforceFocus={false}
@@ -46,7 +47,6 @@ export default class LicenseSearchModal extends React.Component {
             label={label}
             onClose={this.props.onClose}
             open={this.props.open}
-            ref={this.modalRef}
             size="large"
           >
             <this.connectedContainer

@@ -63,13 +63,13 @@ export default class View extends React.Component {
     name: 300,
     type: 150,
     status: 150,
-    startDate: 150,
-    endDate: 150
+    startDate: 120,
+    endDate: 120
   }
 
   formatter = {
-    type: ({ type }) => type && type.label,
-    status: ({ status }) => status && status.label,
+    type: ({ type }) => type?.label,
+    status: ({ status }) => status?.label,
     startDate: ({ startDate }) => (startDate ? <FormattedDate value={startDate} /> : ''),
     endDate: license => <LicenseEndDate license={license} />,
   }
@@ -79,13 +79,13 @@ export default class View extends React.Component {
 
     return (
       <button
+        key={`row-${rowIndex}`}
         className={rowClass}
         data-label={[
           rowData.name,
           this.formatter.type(rowData),
           this.formatter.status(rowData),
         ].join('...')}
-        key={`row-${rowIndex}`}
         type="button"
         {...rowProps}
       >
@@ -108,9 +108,9 @@ export default class View extends React.Component {
     return (
       <div data-test-licenses-no-results-message>
         <NoResultsMessage
-          source={source}
-          searchTerm={query.query || ''}
           filterPaneIsVisible
+          searchTerm={query.query || ''}
+          source={source}
           toggleFilterPane={noop}
         />
       </div>
@@ -130,10 +130,10 @@ export default class View extends React.Component {
             <FormattedMessage id={hideOrShowMessageId}>
               {hideOrShowMessage => (
                 <FilterPaneToggle
-                  visible={filterPaneIsVisible}
                   aria-label={`${hideOrShowMessage}...s${appliedFiltersMessage}`}
-                  onClick={this.toggleFilterPane}
                   badge={!filterPaneIsVisible && filterCount ? filterCount : undefined}
+                  onClick={this.toggleFilterPane}
+                  visible={filterPaneIsVisible}
                 />
               )}
             </FormattedMessage>
@@ -169,11 +169,11 @@ export default class View extends React.Component {
     const sortOrder = query.sort || '';
 
     return (
-      <div data-test-licenses ref={contentRef}>
+      <div ref={contentRef} data-test-licenses>
         <SearchAndSortQuery
           initialFilterState={{ status: ['Active'] }}
-          initialSortState={{ sort: 'name' }}
           initialSearchState={{ query: '' }}
+          initialSortState={{ sort: 'name' }}
           queryGetter={queryGetter}
           querySetter={querySetter}
           syncToLocationSearch={false}
@@ -234,8 +234,8 @@ export default class View extends React.Component {
                         <div className={css.resetButtonWrap}>
                           <Button
                             buttonStyle="none"
-                            id="clickable-reset-all"
                             disabled={disableReset()}
+                            id="clickable-reset-all"
                             onClick={resetAll}
                           >
                             <Icon icon="times-circle-solid">
@@ -256,8 +256,8 @@ export default class View extends React.Component {
                     defaultWidth="fill"
                     firstMenu={this.renderResultsFirstMenu(activeFilters)}
                     padContent={false}
-                    paneTitle={<FormattedMessage id="ui-plugin-find-license.licenses" />}
                     paneSub={this.renderResultsPaneSubtitle(source)}
+                    paneTitle={<FormattedMessage id="ui-plugin-find-license.licenses" />}
                   >
                     <MultiColumnList
                       autosize

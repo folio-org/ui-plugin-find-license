@@ -37,12 +37,12 @@ class LicenseSearch extends React.Component {
   renderDefaultTrigger() {
     return (
       <Button
-        id={triggerId}
-        buttonStyle="primary noRightRadius"
         buttonRef={this.modalTrigger}
+        buttonStyle="primary noRightRadius"
+        id={triggerId}
         onClick={this.openModal}
       >
-        <Icon icon="search" color="#fff" />
+        <Icon color="#fff" icon="search" />
       </Button>
     );
   }
@@ -67,8 +67,8 @@ class LicenseSearch extends React.Component {
         {this.renderTriggerButton()}
         <Modal
           modalRef={this.modalRef}
-          open={this.state.open}
           onClose={this.closeModal}
+          open={this.state.open}
           {...this.props}
         />
       </>
