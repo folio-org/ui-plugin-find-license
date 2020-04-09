@@ -1,5 +1,6 @@
 {
   "meta.title": "License Finder Plugin",
+  "permission.search": "Find License Plugin: Search licenses",
 
   "licenses": "Licenses",
   "selectLicense": "Select license",
