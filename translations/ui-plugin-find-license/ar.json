@@ -9,5 +9,6 @@
     "prop.organizationRole": "دور المؤسسة",
     "prop.startDate": "تاريخ البدء",
     "prop.status": "الحالة",
-    "prop.type": "النوع"
+    "prop.type": "النوع",
+    "permission.search": "برنامج باحث التراخيص المساعد: ابحث التراخيص"
 }

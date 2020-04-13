@@ -1,5 +1,5 @@
 {
-    "meta.title": "License Finder Plugin",
+    "meta.title": "ライセンスファインダープラグイン",
     "selectLicense": "Select license",
     "licenses": "Licenses",
     "searchInputLabel": "Search licenses",
@@ -9,5 +9,6 @@
     "prop.organizationRole": "Organization role",
     "prop.startDate": "Start date",
     "prop.status": "Status",
-    "prop.type": "Type"
+    "prop.type": "Type",
+    "permission.search": "Find License Plugin: Search licenses"
 }
