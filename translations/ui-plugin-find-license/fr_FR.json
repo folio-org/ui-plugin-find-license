@@ -9,5 +9,6 @@
     "prop.organizationRole": "Rôle de l'organisation",
     "prop.startDate": "Date de début",
     "prop.status": "Statut",
-    "prop.type": "Type"
+    "prop.type": "Type",
+    "permission.search": "Find License Plugin: Search licenses"
 }

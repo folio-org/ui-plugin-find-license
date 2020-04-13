@@ -9,5 +9,6 @@
     "prop.organizationRole": "组织角色",
     "prop.startDate": "开始日期",
     "prop.status": "状态",
-    "prop.type": "类型"
+    "prop.type": "类型",
+    "permission.search": "查找许可证插件：搜索许可证"
 }
