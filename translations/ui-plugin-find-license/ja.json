@@ -1,14 +1,14 @@
 {
     "meta.title": "ライセンスファインダープラグイン",
     "selectLicense": "Select license",
-    "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
+    "licenses": "ライセンス",
+    "searchInputLabel": "ライセンスを検索",
     "prop.endDate": "End date",
     "prop.name": "Name",
     "prop.organization": "Organization",
-    "prop.organizationRole": "Organization role",
-    "prop.startDate": "Start date",
+    "prop.organizationRole": "組織の役割",
+    "prop.startDate": "開始日",
     "prop.status": "Status",
     "prop.type": "Type",
-    "permission.search": "Find License Plugin: Search licenses"
+    "permission.search": "ライセンスプラグインの検索：ライセンスの検索"
 }
