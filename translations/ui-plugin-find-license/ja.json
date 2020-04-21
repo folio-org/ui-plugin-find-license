@@ -4,11 +4,11 @@
     "licenses": "ライセンス",
     "searchInputLabel": "ライセンスを検索",
     "prop.endDate": "End date",
-    "prop.name": "Name",
+    "prop.name": "名称",
     "prop.organization": "Organization",
     "prop.organizationRole": "組織の役割",
     "prop.startDate": "開始日",
-    "prop.status": "Status",
-    "prop.type": "Type",
+    "prop.status": "ステータス",
+    "prop.type": "種類",
     "permission.search": "ライセンスプラグインの検索：ライセンスの検索"
 }
