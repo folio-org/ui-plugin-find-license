@@ -6,9 +6,9 @@
     "prop.endDate": "结束日期",
     "prop.name": "名称",
     "prop.organization": "组织",
-    "prop.organizationRole": "组织角色",
+    "prop.organizationRole": "組織機構角色",
     "prop.startDate": "开始日期",
-    "prop.status": "状态",
-    "prop.type": "类型",
+    "prop.status": "狀態",
+    "prop.type": "類型",
     "permission.search": "Find License Plugin: Search licenses"
 }
