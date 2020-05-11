@@ -1,5 +1,9 @@
 # Change history for ui-plugin-find-license
 
+## 4.0.0 IN PROGRESS
+* Upgrade to Stripes 4.0
+* Added translations
+
 ## 3.5.0 2020-03-11
 * Accessibility fixes
 * Added translations
