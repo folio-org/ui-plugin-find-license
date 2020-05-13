@@ -7,7 +7,7 @@
     "prop.name": "名稱",
     "prop.organization": "組織機構",
     "prop.organizationRole": "組織機構角色",
-    "prop.startDate": "开始日期",
+    "prop.startDate": "開始日期",
     "prop.status": "狀態",
     "prop.type": "類型",
     "permission.search": "Find License Plugin: Search licenses"
