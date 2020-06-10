@@ -3,6 +3,7 @@
 ## 4.0.0 IN PROGRESS
 * Upgrade to Stripes 4.0
 * Added translations
+* Bumped the required node version to 10
 
 ## 3.5.0 2020-03-11
 * Accessibility fixes
