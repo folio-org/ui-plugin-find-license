@@ -1,6 +1,9 @@
 # Change history for ui-plugin-find-license
 
-## 4.0.0 IN PROGRESS
+## 5.0.0 In Progress
+* Upgrade to Stripes 5.0
+
+## 4.0.0 2020-06-10
 * Upgrade to Stripes 4.0
 * Added translations
 * Bumped the required node version to 10
