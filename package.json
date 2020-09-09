@@ -17,7 +17,7 @@
     "pluginType": "find-license",
     "displayName": "ui-plugin-find-license.meta.title",
     "okapiInterfaces": {
-      "licenses": "1.0 2.0"
+      "licenses": "1.0 2.0 3.0"
     },
     "stripesDeps": [
       "@folio/stripes-erm-components"
