@@ -1,14 +1,14 @@
 {
-    "meta.title": "License Finder Plugin",
-    "selectLicense": "Select license",
-    "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
-    "prop.endDate": "End date",
+    "meta.title": "Plugin Lizenzverträge suchen",
+    "selectLicense": "Lizenzverträge auswählen",
+    "licenses": "Lizenzverträge",
+    "searchInputLabel": "Lizenzverträge suchen",
+    "prop.endDate": "Enddatum",
     "prop.name": "Name",
-    "prop.organization": "Organization",
-    "prop.organizationRole": "Organization role",
-    "prop.startDate": "Start date",
+    "prop.organization": "Organisation",
+    "prop.organizationRole": "Rolle der Organisation",
+    "prop.startDate": "Startdatum",
     "prop.status": "Status",
-    "prop.type": "Type",
-    "permission.search": "Find License Plugin: Search licenses"
+    "prop.type": "Typ",
+    "permission.search": "Plugin: Lizenzverträge suchen"
 }
