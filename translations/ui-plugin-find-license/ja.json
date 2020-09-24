@@ -1,6 +1,6 @@
 {
     "meta.title": "ライセンスファインダープラグイン",
-    "selectLicense": "Select license",
+    "selectLicense": "ライセンスを選択",
     "licenses": "ライセンス",
     "searchInputLabel": "ライセンスを検索",
     "prop.endDate": "End date",
