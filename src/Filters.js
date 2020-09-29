@@ -75,6 +75,7 @@ export default class LicenseFilters extends React.Component {
         closedByDefault
         displayClearButton={orgFilters.length > 0}
         header={FilterAccordionHeader}
+        id="organizations-filter"
         label={<FormattedMessage id="ui-plugin-find-license.prop.organization" />}
         onClearFilter={() => {
           this.props.filterHandlers.state({
@@ -113,6 +114,7 @@ export default class LicenseFilters extends React.Component {
         closedByDefault
         displayClearButton={roleFilters.length > 0}
         header={FilterAccordionHeader}
+        id="organization-role-filter"
         label={<FormattedMessage id="ui-plugin-find-license.prop.organizationRole" />}
         onClearFilter={() => { this.props.filterHandlers.clearGroup('role'); }}
         separator={false}
