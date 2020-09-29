@@ -37,16 +37,27 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "echo 'placeholder. no tests implemented'"
+    "test": "stripes test karma"
   },
   "devDependencies": {
+    "@bigtest/interactor": "^0.9.1",
+    "@bigtest/mocha": "^0.5.2",
+    "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.2.0",
     "@folio/stripes": "^5.0.0",
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "core-js": "^3.6.1",
     "babel-eslint": "^9.0.0",
     "eslint": "^6.2.1",
+    "faker": "^4.1.0",
+    "inflected": "^2.0.4",
+    "miragejs": "^0.1.40",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-intl": "^5.8.1"
+    "react-intl": "^5.8.1",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
     "@folio/stripes-erm-components": "^4.0.0",
@@ -58,6 +69,7 @@
   "peerDependencies": {
     "@folio/stripes": "^5.0.0",
     "react": "*",
-    "react-intl": "^5.8.1"
+    "react-intl": "^5.8.1",
+    "react-router-dom": "^5.2.0"
   }
 }
