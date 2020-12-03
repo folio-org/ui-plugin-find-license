@@ -11,6 +11,7 @@ import {
   Button,
   PaneMenu,
   Paneset,
+  FormattedUTCDate,
 } from '@folio/stripes/components';
 
 import { AppIcon } from '@folio/stripes/core';
@@ -70,7 +71,7 @@ export default class View extends React.Component {
   formatter = {
     type: ({ type }) => type?.label,
     status: ({ status }) => status?.label,
-    startDate: ({ startDate }) => (startDate ? <FormattedDate value={startDate} /> : ''),
+    startDate: license => (license.startDate ? <FormattedUTCDate value={license.startDate} /> : ''),
     endDate: license => <LicenseEndDate license={license} />,
   }
 
