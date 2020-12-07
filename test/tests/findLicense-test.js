@@ -117,7 +117,7 @@ describe('UI-plugin-find-license', function () {
     });
 
     it('renders trigger button', function () {
-      expect(findLicense.button.isPresent).to.be.true;
+      expect(findLicense.button.isPresent).to.be.false;
     });
 
     describe('clicking the trigger button', function () {
