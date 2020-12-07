@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'lodash';
-import { FormattedMessage } from 'react-intl';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 
 import {
   MultiColumnList,
@@ -11,7 +11,6 @@ import {
   Button,
   PaneMenu,
   Paneset,
-  FormattedUTCDate,
 } from '@folio/stripes/components';
 
 import { AppIcon } from '@folio/stripes/core';
@@ -71,7 +70,7 @@ export default class View extends React.Component {
   formatter = {
     type: ({ type }) => type?.label,
     status: ({ status }) => status?.label,
-    startDate: ({ startDate }) => (startDate ? <FormattedUTCDate value={startDate} /> : ''),
+    startDate: ({ startDate }) => (startDate ? <FormattedDate value={startDate} /> : ''),
     endDate: license => <LicenseEndDate license={license} />,
   }
 
