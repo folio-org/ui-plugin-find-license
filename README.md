@@ -1,4 +1,4 @@
-# ui-plugin-find-license
+# DO NOT MERGE ui-plugin-find-license
 
 Copyright (C) 2017-2019 The Open Library Foundation
 
