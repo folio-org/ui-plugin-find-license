@@ -11,7 +11,7 @@ import FindLicenseInteractor from '../interactors/findLicense';
 chai.use(spies);
 const { expect, spy } = chai;
 
-const onLicenseSelected = spy();
+const onLicenseSelected = () => {};
 
 const activeStatusLicensesCount = 1;
 const activeStatus = {
