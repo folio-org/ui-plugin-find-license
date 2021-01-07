@@ -1,8 +1,8 @@
 # Change history for ui-plugin-find-license
 
-## 5.1.0 IN PROGRESS
+## 6.0.0 IN PROGRESS
 * Fixed incorrect start date in plugin. ERM-1237
-
+* Upgrade to Stripes 6.0.
 ## 5.0.0 2020-10-15
 * Upgrade to Stripes 5.0
 * Added tests for the plugin. ERM-1112
