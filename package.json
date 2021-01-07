@@ -1,6 +1,6 @@
 {
   "name": "@folio/plugin-find-license",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "License-finder for Stripes",
   "repository": "folio-org/ui-plugin-find-license",
   "publishConfig": {
@@ -44,7 +44,7 @@
     "@bigtest/mocha": "^0.5.2",
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.2.0",
-    "@folio/stripes": "^5.0.0",
+    "@folio/stripes": "^6.0.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
     "core-js": "^3.6.1",
@@ -60,14 +60,14 @@
     "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
-    "@folio/stripes-erm-components": "^4.0.0",
+    "@folio/stripes-erm-components": "^5.0.0",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.4.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "@folio/stripes": "^5.0.0",
+    "@folio/stripes": "^6.0.0",
     "react": "*",
     "react-intl": "^5.8.1",
     "react-router-dom": "^5.2.0"
