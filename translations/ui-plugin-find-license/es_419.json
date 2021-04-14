@@ -1,6 +1,6 @@
 {
     "meta.title": "Plugin del Buscador de Licencias",
-    "selectLicense": "Select license",
+    "selectLicense": "Seleccionar licencia",
     "licenses": "Licencias",
     "searchInputLabel": "Buscar licencias",
     "prop.endDate": "Fecha fin",
