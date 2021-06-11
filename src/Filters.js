@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { Accordion, AccordionSet, FilterAccordionHeader, Selection } from '@folio/stripes/components';
-import { CheckboxFilter } from '@folio/stripes/smart-components';
-import { OrganizationSelection } from '@folio/stripes-erm-components';
+import { CheckboxFilter, MultiSelectionFilter } from '@folio/stripes/smart-components';
+import { CustomPropertyFilters, DateFilter, OrganizationSelection } from '@folio/stripes-erm-components';
 
 const FILTERS = [
   'status',
@@ -31,7 +31,7 @@ export default class LicenseFilters extends React.Component {
     const newState = {};
 
     FILTERS.forEach(filter => {
-      const values = props.data[`${filter}Values`];
+      const values = props.data[`${filter}Values`] || [];
       if (values.length !== state[filter].length) {
         newState[filter] = values.map(({ label }) => ({ label, value: label }));
       }
@@ -43,7 +43,7 @@ export default class LicenseFilters extends React.Component {
   }
 
   renderCheckboxFilter = (name, props) => {
-    const { activeFilters } = this.props;
+    const { activeFilters, filterHandlers } = this.props;
     const groupFilters = activeFilters[name] || [];
 
     return (
@@ -52,7 +52,7 @@ export default class LicenseFilters extends React.Component {
         header={FilterAccordionHeader}
         id={`filter-accordion-${name}`}
         label={<FormattedMessage id={`ui-plugin-find-license.prop.${name}`} />}
-        onClearFilter={() => { this.props.filterHandlers.clearGroup(name); }}
+        onClearFilter={() => { filterHandlers.clearGroup(name); }}
         separator={false}
         {...props}
       >
@@ -99,7 +99,7 @@ export default class LicenseFilters extends React.Component {
   }
 
   renderRoleLabel = () => {
-    const roles = this.props.data.orgRoleValues;
+    const roles = this.props.data.orgRoleValues || [];
     const dataOptions = roles.map(role => ({
       value: role.id,
       label: role.label,
@@ -129,6 +129,61 @@ export default class LicenseFilters extends React.Component {
     );
   }
 
+  renderTagsFilter = () => {
+    const { activeFilters, filterHandlers } = this.props;
+    const tagFilters = activeFilters.tags || [];
+
+    return (
+      <Accordion
+        closedByDefault
+        displayClearButton={tagFilters.length > 0}
+        header={FilterAccordionHeader}
+        id="clickable-tags-filter"
+        label={<FormattedMessage id="ui-licenses.tags" />}
+        onClearFilter={() => { filterHandlers.clearGroup('tags'); }}
+        separator={false}
+      >
+        <MultiSelectionFilter
+          dataOptions={this.state.tags || []}
+          id="tags-filter"
+          name="tags"
+          onChange={e => filterHandlers.state({ ...activeFilters, tags: e.values })}
+          selectedValues={tagFilters}
+        />
+      </Accordion>
+    );
+  };
+
+  renderStartDateFilter = () => {
+    const { activeFilters, filterHandlers } = this.props;
+    return <DateFilter
+      activeFilters={activeFilters}
+      filterHandlers={filterHandlers}
+      name="startDate"
+    />;
+  }
+
+ renderEndDateFilter = () => {
+   const { activeFilters, filterHandlers } = this.props;
+   return (
+     <DateFilter
+       activeFilters={activeFilters}
+       filterHandlers={filterHandlers}
+       name="endDate"
+     />
+   );
+ };
+
+  renderCustomPropertyFilters = () => {
+    const { activeFilters } = this.props;
+    return <CustomPropertyFilters
+      activeFilters={activeFilters}
+      customProperties={this.props.data.terms || []}
+      custPropName="term"
+      filterHandlers={this.props.filterHandlers}
+    />;
+  };
+
   render() {
     return (
       <AccordionSet>
@@ -136,6 +191,10 @@ export default class LicenseFilters extends React.Component {
         {this.renderCheckboxFilter('type')}
         {this.renderOrganizationFilter()}
         {this.renderRoleLabel()}
+        {this.renderTagsFilter()}
+        {this.renderStartDateFilter()}
+        {this.renderEndDateFilter()}
+        {this.renderCustomPropertyFilters()}
       </AccordionSet>
     );
   }
