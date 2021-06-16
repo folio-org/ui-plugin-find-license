@@ -1,6 +1,7 @@
 # Change history for ui-plugin-find-license
 
-## 6.1.0 In progress
+## 6.1.0 2021-06-16
+* ERM-1599 Add descriptions to visible permission set in ui-plugin-find-license
 
 ## 6.0.0 2021-03-18
 * Fixed incorrect start date in plugin. ERM-1237
