@@ -28,11 +28,14 @@ export default class Container extends React.Component {
           'End Date': 'endDate'
         },
         filterKeys: {
+          agreementStatus: 'agreementStatus.value',
           orgs: 'orgs.org',
           role: 'orgs.role',
+          tags: 'tags.value',
+          type: 'type.value'
         },
         queryGetter: r => r.licenseSearchParams,
-        searchKey: 'name',
+        searchKey: 'name,alternateNames.name,description',
       })
     },
     statusValues: {
@@ -48,6 +51,16 @@ export default class Container extends React.Component {
     orgRoleValues: {
       type: 'okapi',
       path: 'licenses/refdata/LicenseOrg/role',
+      shouldRefresh: () => false,
+    },
+    tagsValues: {
+      type: 'okapi',
+      path: 'tags?limit=100',
+      records: 'tags',
+    },
+    terms: {
+      type: 'okapi',
+      path: 'licenses/custprops',
       shouldRefresh: () => false,
     },
     licenseSearchParams: {
@@ -119,6 +132,8 @@ export default class Container extends React.Component {
           orgRoleValues: get(resources, 'orgRoleValues.records', []),
           statusValues: get(resources, 'statusValues.records', []),
           typeValues: get(resources, 'typeValues.records', []),
+          tagsValues: get(resources, 'tagsValues.records', []),
+          terms: resources?.terms?.records ?? [],
         }}
         onNeedMoreData={this.handleNeedMoreData}
         onSelectRow={onSelectRow}

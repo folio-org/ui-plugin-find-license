@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import { Accordion, AccordionSet, FilterAccordionHeader, Selection } from '@folio/stripes/components';
 import { CheckboxFilter, MultiSelectionFilter } from '@folio/stripes/smart-components';
@@ -9,41 +9,34 @@ import { CustomPropertyFilters, DateFilter, OrganizationSelection } from '@folio
 const FILTERS = [
   'status',
   'type',
+  'tags',
 ];
 
-export default class LicenseFilters extends React.Component {
-  static propTypes = {
-    activeFilters: PropTypes.object,
-    data: PropTypes.object.isRequired,
-    filterHandlers: PropTypes.object,
-  };
+export default function Filters({ activeFilters, data, filterHandlers }) {
+  const intl = useIntl();
 
-  static defaultProps = {
-    activeFilters: {}
-  };
-
-  state = {
+  const [filterState, setFilterState] = useState({
     status: [],
     type: [],
-  }
+    tags: [],
+  });
 
-  static getDerivedStateFromProps(props, state) {
+
+  useEffect(() => {
     const newState = {};
-
     FILTERS.forEach(filter => {
-      const values = props.data[`${filter}Values`] || [];
-      if (values.length !== state[filter].length) {
+      const values = data[`${filter}Values`] || [];
+      if (values.length !== filterState[filter]?.length) {
         newState[filter] = values.map(({ label }) => ({ label, value: label }));
       }
     });
 
-    if (Object.keys(newState).length) return newState;
+    if (Object.keys(newState).length) {
+      setFilterState(prevState => ({ ...prevState, ...newState }));
+    }
+  }, [data, filterState]);
 
-    return null;
-  }
-
-  renderCheckboxFilter = (name, props) => {
-    const { activeFilters, filterHandlers } = this.props;
+  const renderCheckboxFilter = (name, props) => {
     const groupFilters = activeFilters[name] || [];
 
     return (
@@ -57,17 +50,16 @@ export default class LicenseFilters extends React.Component {
         {...props}
       >
         <CheckboxFilter
-          dataOptions={this.state[name]}
+          dataOptions={filterState[name]}
           name={name}
-          onChange={(group) => { this.props.filterHandlers.state({ ...activeFilters, [group.name]: group.values }); }}
+          onChange={(group) => { filterHandlers.state({ ...activeFilters, [group.name]: group.values }); }}
           selectedValues={groupFilters}
         />
       </Accordion>
     );
-  }
+  };
 
-  renderOrganizationFilter = () => {
-    const { activeFilters } = this.props;
+  const renderOrganizationFilter = () => {
     const orgFilters = activeFilters.orgs || [];
 
     return (
@@ -78,7 +70,7 @@ export default class LicenseFilters extends React.Component {
         id="organizations-filter"
         label={<FormattedMessage id="ui-plugin-find-license.prop.organization" />}
         onClearFilter={() => {
-          this.props.filterHandlers.state({
+          filterHandlers.state({
             ...activeFilters,
             role: [],
             orgs: [],
@@ -89,23 +81,22 @@ export default class LicenseFilters extends React.Component {
         <OrganizationSelection
           input={{
             name: 'license-orgs-filter',
-            onChange: value => this.props.filterHandlers.state({ ...activeFilters, orgs: [value] }),
+            onChange: value => filterHandlers.state({ ...activeFilters, orgs: [value] }),
             value: orgFilters[0] || '',
           }}
           path="licenses/org"
         />
       </Accordion>
     );
-  }
+  };
 
-  renderRoleLabel = () => {
-    const roles = this.props.data.orgRoleValues || [];
+  const renderRoleLabel = () => {
+    const roles = data.orgRoleValues;
     const dataOptions = roles.map(role => ({
       value: role.id,
       label: role.label,
     }));
 
-    const { activeFilters } = this.props;
     const orgFilters = activeFilters.orgs || [];
     const roleFilters = activeFilters.role || [];
 
@@ -116,21 +107,20 @@ export default class LicenseFilters extends React.Component {
         header={FilterAccordionHeader}
         id="organization-role-filter"
         label={<FormattedMessage id="ui-plugin-find-license.prop.organizationRole" />}
-        onClearFilter={() => { this.props.filterHandlers.clearGroup('role'); }}
+        onClearFilter={() => { filterHandlers.clearGroup('role'); }}
         separator={false}
       >
         <Selection
           dataOptions={dataOptions}
           disabled={orgFilters.length === 0}
-          onChange={value => this.props.filterHandlers.state({ ...activeFilters, role: [value] })}
+          onChange={value => filterHandlers.state({ ...activeFilters, role: [value] })}
           value={roleFilters[0] || ''}
         />
       </Accordion>
     );
-  }
+  };
 
-  renderTagsFilter = () => {
-    const { activeFilters, filterHandlers } = this.props;
+  const renderTagsFilter = () => {
     const tagFilters = activeFilters.tags || [];
 
     return (
@@ -144,7 +134,7 @@ export default class LicenseFilters extends React.Component {
         separator={false}
       >
         <MultiSelectionFilter
-          dataOptions={this.state.tags || []}
+          dataOptions={filterState.tags || []}
           id="tags-filter"
           name="tags"
           onChange={e => filterHandlers.state({ ...activeFilters, tags: e.values })}
@@ -154,48 +144,62 @@ export default class LicenseFilters extends React.Component {
     );
   };
 
-  renderStartDateFilter = () => {
-    const { activeFilters, filterHandlers } = this.props;
+  const renderStartDateFilter = () => {
     return <DateFilter
       activeFilters={activeFilters}
       filterHandlers={filterHandlers}
       name="startDate"
-    />;
-  }
-
- renderEndDateFilter = () => {
-   const { activeFilters, filterHandlers } = this.props;
-   return (
-     <DateFilter
-       activeFilters={activeFilters}
-       filterHandlers={filterHandlers}
-       name="endDate"
-     />
-   );
- };
-
-  renderCustomPropertyFilters = () => {
-    const { activeFilters } = this.props;
-    return <CustomPropertyFilters
-      activeFilters={activeFilters}
-      customProperties={this.props.data.terms || []}
-      custPropName="term"
-      filterHandlers={this.props.filterHandlers}
+      resourceName={intl.formatMessage({ id: 'ui-plugin-find-license.licenses' }).toLowerCase()}
     />;
   };
 
-  render() {
+  const renderEndDateFilter = () => {
     return (
-      <AccordionSet>
-        {this.renderCheckboxFilter('status')}
-        {this.renderCheckboxFilter('type')}
-        {this.renderOrganizationFilter()}
-        {this.renderRoleLabel()}
-        {this.renderTagsFilter()}
-        {this.renderStartDateFilter()}
-        {this.renderEndDateFilter()}
-        {this.renderCustomPropertyFilters()}
-      </AccordionSet>
+      <DateFilter
+        activeFilters={activeFilters}
+        filterHandlers={filterHandlers}
+        name="endDate"
+        resourceName={intl.formatMessage({ id: 'ui-plugin-find-license.licenses' }).toLowerCase()}
+      />
     );
-  }
+  };
+
+  const renderCustomPropertyFilters = () => {
+    return <CustomPropertyFilters
+      activeFilters={activeFilters}
+      customProperties={data.terms || []}
+      custPropName="term"
+      filterHandlers={filterHandlers}
+    />;
+  };
+
+  return (
+    <AccordionSet>
+      {renderCheckboxFilter('status')}
+      {renderCheckboxFilter('type')}
+      {renderOrganizationFilter()}
+      {renderRoleLabel()}
+      {renderTagsFilter()}
+      {renderStartDateFilter()}
+      {renderEndDateFilter()}
+      {renderCustomPropertyFilters()}
+    </AccordionSet>
+  );
 }
+
+Filters.propTypes = {
+  activeFilters: PropTypes.object,
+  data: PropTypes.object.isRequired,
+  filterHandlers: PropTypes.object,
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }),
+};
+
+Filters.defaultProps = {
+  activeFilters: {
+    status: [],
+    type: [],
+  }
+};
+

@@ -10,5 +10,7 @@
     "prop.startDate": "Start date",
     "prop.status": "Status",
     "prop.type": "Type",
-    "permission.search": "Find License Plugin: Search licenses"
+    "permission.search": "Find License Plugin: Search licenses",
+    "prop.tags": "Tags",
+    "term": "Term"
 }

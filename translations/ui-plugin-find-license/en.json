@@ -12,5 +12,7 @@
   "prop.organizationRole": "Organization role",
   "prop.startDate": "Start date",
   "prop.status": "Status",
-  "prop.type": "Type"
+  "prop.type": "Type",
+  "prop.tags": "Tags",
+  "term": "Term"
 }
