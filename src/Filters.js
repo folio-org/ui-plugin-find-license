@@ -129,7 +129,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
         displayClearButton={tagFilters.length > 0}
         header={FilterAccordionHeader}
         id="clickable-tags-filter"
-        label={<FormattedMessage id="ui-licenses.tags" />}
+        label={<FormattedMessage id="ui-plugin-find-license.prop.tags" />}
         onClearFilter={() => { filterHandlers.clearGroup('tags'); }}
         separator={false}
       >
