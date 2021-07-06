@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
 import { getSASParams } from '@folio/stripes-erm-components';
@@ -119,7 +118,7 @@ export default class Container extends React.Component {
   }
 
   queryGetter = () => {
-    return get(this.props.resources, 'licenseSearchParams', {});
+    return this.props.resources?.licenseSearchParams ?? {};
   }
 
   render() {
