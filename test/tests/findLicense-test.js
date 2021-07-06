@@ -161,7 +161,6 @@ describe('UI-plugin-find-license', function () {
 
         describe('selecting a license', function () {
           beforeEach(async function () {
-            await findLicense.button.click();
             await findLicense.modal.instances(0).click();
           });
 
