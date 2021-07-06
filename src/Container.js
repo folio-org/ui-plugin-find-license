@@ -31,8 +31,8 @@ export default class Container extends React.Component {
           agreementStatus: 'agreementStatus.value',
           orgs: 'orgs.org',
           role: 'orgs.role',
-          tags: 'tags.value',
-          type: 'type.value'
+          tags: 'tags.label',
+          type: 'type.label'
         },
         queryGetter: r => r.licenseSearchParams,
         searchKey: 'name,alternateNames.name,description',
