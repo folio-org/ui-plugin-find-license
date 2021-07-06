@@ -9,9 +9,9 @@ import PluginHarness from '../helpers/PluginHarness';
 import FindLicenseInteractor from '../interactors/findLicense';
 
 chai.use(spies);
-const { expect, spy } = chai;
+const { expect } = chai;
 
-const onLicenseSelected = spy();
+let licenseSelected = false;
 
 const activeStatusLicensesCount = 1;
 const activeStatus = {
@@ -111,7 +111,7 @@ describe('UI-plugin-find-license', function () {
     beforeEach(async function () {
       await mount(
         <PluginHarness
-          onLicenseSelected={onLicenseSelected}
+          onLicenseSelected={() => { licenseSelected = true; }}
         />
       );
     });
@@ -161,7 +161,6 @@ describe('UI-plugin-find-license', function () {
 
         describe('selecting a license', function () {
           beforeEach(async function () {
-            await findLicense.button.click();
             await findLicense.modal.instances(0).click();
           });
 
@@ -170,7 +169,7 @@ describe('UI-plugin-find-license', function () {
           });
 
           it('calls the onLicenseSelected callback', function () {
-            expect(onLicenseSelected).to.have.been.called();
+            expect(licenseSelected).to.be.true;
           });
         });
 
