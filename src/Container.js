@@ -132,11 +132,11 @@ export default class Container extends React.Component {
     return (
       <View
         data={{
-          licenses: resources?.licenses.records ?? [],
-          orgRoleValues: resources?.orgRoleValues.records ?? [],
-          statusValues: resources?.statusValues.records ?? [],
-          typeValues: resources?.typeValues.records ?? [],
-          tagsValues: resources?.tagsValues.records ?? [],
+          licenses: resources?.licenses?.records ?? [],
+          orgRoleValues: resources?.orgRoleValues?.records ?? [],
+          statusValues: resources?.statusValues?.records ?? [],
+          typeValues: resources?.typeValues?.records ?? [],
+          tagsValues: resources?.tagsValues?.records ?? [],
           terms: resources?.terms?.records ?? [],
         }}
         onNeedMoreData={this.handleNeedMoreData}
