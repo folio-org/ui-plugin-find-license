@@ -36,8 +36,8 @@ export default class Container extends React.Component {
         queryGetter: r => r.licenseSearchParams,
         searchKey: 'name,alternateNames.name,description',
         sortKeys: {
-          status: 'status.label',
-          type: 'type.label',
+          status: 'status.value',
+          type: 'type.value',
         },
       })
     },
