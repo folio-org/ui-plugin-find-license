@@ -90,14 +90,14 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
     );
   };
 
-  const renderRoleLabel = () => {
+  const renderOrganizationRoleFilter = () => {
     const roles = data.orgRoleValues;
     const dataOptions = roles.map(role => ({
       value: role.id,
       label: role.label,
     }));
 
-    const orgFilters = activeFilters.orgs || [];
+    // const orgFilters = activeFilters.orgs || [];
     const roleFilters = activeFilters.role || [];
 
     return (
@@ -110,12 +110,16 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
         onClearFilter={() => { filterHandlers.clearGroup('role'); }}
         separator={false}
       >
-        <Selection
-          dataOptions={dataOptions}
-          disabled={orgFilters.length === 0}
-          onChange={value => filterHandlers.state({ ...activeFilters, role: [value] })}
-          value={roleFilters[0] || ''}
-        />
+        <FormattedMessage id="ui-plugin-find-license.organizations.selectRole">
+          {placeholder => (
+            <Selection
+              dataOptions={dataOptions}
+              onChange={value => filterHandlers.state({ ...activeFilters, role: [value] })}
+              placeholder={placeholder}
+              value={roleFilters[0] || ''}
+            />
+          )}
+        </FormattedMessage>
       </Accordion>
     );
   };
@@ -178,7 +182,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
       {renderCheckboxFilter('status')}
       {renderCheckboxFilter('type')}
       {renderOrganizationFilter()}
-      {renderRoleLabel()}
+      {renderOrganizationRoleFilter()}
       {renderTagsFilter()}
       {renderStartDateFilter()}
       {renderEndDateFilter()}
