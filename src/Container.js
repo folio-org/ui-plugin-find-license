@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import { getSASParams } from '@folio/stripes-erm-components';
+import { generateQueryParams } from '@folio/stripes-erm-components';
 
 import View from './View';
 
@@ -18,7 +18,7 @@ export default class Container extends React.Component {
       perRequest: RESULT_COUNT_INCREMENT,
       limitParam: 'perPage',
       path: 'licenses/licenses',
-      params: getSASParams({
+      params: generateQueryParams({
         columnMap: {
           'Name': 'name',
           'Type': 'type',

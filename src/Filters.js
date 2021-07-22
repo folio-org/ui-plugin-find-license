@@ -97,7 +97,6 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
       label: role.label,
     }));
 
-    // const orgFilters = activeFilters.orgs || [];
     const roleFilters = activeFilters.role || [];
 
     return (
