@@ -2,6 +2,7 @@ import React from 'react';
 import { Pluggable } from '@folio/stripes/core';
 import { Button } from '@folio/stripes/components';
 import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
 
 const PluginHarness = ({ onLicenseSelected = () => { }, ...rest }) => {
   return (
@@ -35,7 +36,11 @@ const PluginHarness = ({ onLicenseSelected = () => { }, ...rest }) => {
       type="find-license"
       {...rest}
     />
-  )
+  );
+};
+
+PluginHarness.propTypes = {
+  onLicenseSelected: PropTypes.func
 };
 
 export default PluginHarness;
