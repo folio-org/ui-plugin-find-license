@@ -2,7 +2,6 @@ import React from 'react';
 import { Pluggable } from '@folio/stripes/core';
 import { Button } from '@folio/stripes/components';
 import { FormattedMessage } from 'react-intl';
-import noop from 'lodash/noop';
 
 const PluginHarness = ({ onLicenseSelected = () => { }, ...rest }) => {
   return (
