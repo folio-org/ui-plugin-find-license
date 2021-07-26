@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import { getSASParams } from '@folio/stripes-erm-components';
+import { generateQueryParams } from '@folio/stripes-erm-components';
 
 import View from './View';
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
+const RECORDS_PER_REQUEST = 100;
 
 export default class Container extends React.Component {
   static manifest = Object.freeze({
@@ -18,7 +19,7 @@ export default class Container extends React.Component {
       perRequest: RESULT_COUNT_INCREMENT,
       limitParam: 'perPage',
       path: 'licenses/licenses',
-      params: getSASParams({
+      params: generateQueryParams({
         columnMap: {
           'Name': 'name',
           'Type': 'type',
@@ -28,16 +29,16 @@ export default class Container extends React.Component {
         },
         filterKeys: {
           agreementStatus: 'agreementStatus.value',
-          orgs: 'orgs.org',
-          role: 'orgs.role',
-          tags: 'tags.label',
+          org: 'orgs.org',
+          role: 'orgs.roles.role',
+          status: 'status.label',
+          tags: 'tags.value',
           type: 'type.label'
         },
-        queryGetter: r => r.licenseSearchParams,
         searchKey: 'name,alternateNames.name,description',
         sortKeys: {
-          status: 'status.label',
-          type: 'type.label',
+          status: 'status.value',
+          type: 'type.value',
         },
       })
     },
@@ -49,6 +50,7 @@ export default class Container extends React.Component {
     typeValues: {
       type: 'okapi',
       path: 'licenses/refdata/License/type',
+      perRequest: RECORDS_PER_REQUEST,
       shouldRefresh: () => false,
     },
     orgRoleValues: {
@@ -66,12 +68,7 @@ export default class Container extends React.Component {
       path: 'licenses/custprops',
       shouldRefresh: () => false,
     },
-    licenseSearchParams: {
-      initialValue: {
-        filters: 'status.Active',
-        sort: 'name',
-      }
-    },
+    query: { initialValue: {} },
     resultCount: { initialValue: INITIAL_RESULT_COUNT },
   });
 
@@ -98,7 +95,7 @@ export default class Container extends React.Component {
       this.searchField.current.focus();
     }
 
-    this.props.mutator.licenseSearchParams.update({
+    this.props.mutator.query.update({
       filters: 'status.Active'
     });
   }
@@ -109,16 +106,12 @@ export default class Container extends React.Component {
     }
   }
 
-  querySetter = ({ nsValues, state }) => {
-    if (/reset/.test(state.changeType)) {
-      this.props.mutator.licenseSearchParams.replace(nsValues);
-    } else {
-      this.props.mutator.licenseSearchParams.update(nsValues);
-    }
+  querySetter = ({ nsValues }) => {
+    this.props.mutator.query.update(nsValues);
   }
 
   queryGetter = () => {
-    return this.props.resources?.licenseSearchParams ?? {};
+    return this.props?.resources?.query ?? {};
   }
 
   render() {

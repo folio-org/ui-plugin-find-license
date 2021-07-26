@@ -9,6 +9,7 @@
   "prop.name": "Name",
   "prop.organization": "Organization",
   "prop.organizationRole": "Organization role",
+  "organizations.selectRole": "Select a role",
   "prop.status": "Status",
   "prop.type": "Type",
   "prop.tags": "Tags",
