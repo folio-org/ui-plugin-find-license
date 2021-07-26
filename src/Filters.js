@@ -96,7 +96,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
       value: role.id,
       label: role.label,
     }));
-    
+
     const roleFilters = activeFilters.role || [];
 
     return (
