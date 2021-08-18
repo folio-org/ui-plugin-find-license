@@ -38,7 +38,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "stripes test karma"
+    "test": "stripes test karma",
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-find-license ./translations/ui-plugin-find-license/compiled"
   },
   "devDependencies": {
     "@bigtest/interactor": "^0.9.1",
@@ -47,10 +48,11 @@
     "@folio/eslint-config-stripes": "^5.2.0",
     "@folio/stripes": "^6.2.0",
     "@folio/stripes-cli": "^2.3.0",
+    "@formatjs/cli": "^4.2.31",
+    "babel-eslint": "^9.0.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
     "core-js": "^3.6.1",
-    "babel-eslint": "^9.0.0",
     "eslint": "^6.2.1",
     "faker": "^4.1.0",
     "inflected": "^2.0.4",
