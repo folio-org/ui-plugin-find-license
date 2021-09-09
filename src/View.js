@@ -72,7 +72,7 @@ export default class View extends React.Component {
     type: ({ type }) => type?.label,
     status: ({ status }) => status?.label,
     startDate: ({ startDate }) => (startDate ? <FormattedUTCDate value={startDate} /> : ''),
-    endDate: license => <LicenseEndDate license={license} />,
+    endDate: license => <LicenseEndDate license={license} renderNullIfEmpty />,
   }
 
   rowFormatter = (row) => {
