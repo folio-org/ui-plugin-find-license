@@ -31,9 +31,9 @@ export default class Container extends React.Component {
           agreementStatus: 'agreementStatus.value',
           org: 'orgs.org',
           role: 'orgs.roles.role',
-          status: 'status.label',
+          status: 'status.value',
           tags: 'tags.value',
-          type: 'type.label'
+          type: 'type.value'
         },
         searchKey: 'name,alternateNames.name,description',
         sortKeys: {
@@ -96,7 +96,7 @@ export default class Container extends React.Component {
     }
 
     this.props.mutator.query.update({
-      filters: 'status.Active'
+      filters: 'status.active'
     });
   }
 

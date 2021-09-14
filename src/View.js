@@ -172,7 +172,7 @@ export default class View extends React.Component {
     return (
       <div ref={contentRef} data-test-licenses>
         <SearchAndSortQuery
-          initialFilterState={{ status: ['Active'] }}
+          initialFilterState={{ status: ['active'] }}
           initialSearchState={{ query: '' }}
           initialSortState={{ sort: 'name' }}
           queryGetter={queryGetter}
