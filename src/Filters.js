@@ -27,7 +27,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
     FILTERS.forEach(filter => {
       const values = data[`${filter}Values`] || [];
       if (values.length !== filterState[filter]?.length) {
-        newState[filter] = values.map(({ label }) => ({ label, value: label }));
+        newState[filter] = values;
       }
     });
 
