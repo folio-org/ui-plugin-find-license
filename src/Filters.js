@@ -9,7 +9,6 @@ import { CustomPropertyFilters, DateFilter, OrganizationSelection } from '@folio
 const FILTERS = [
   'status',
   'type',
-  'tags',
 ];
 
 export default function Filters({ activeFilters, data, filterHandlers }) {
@@ -25,11 +24,15 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
   useEffect(() => {
     const newState = {};
     FILTERS.forEach(filter => {
-      const values = data[`${filter}Values`] || [];
+      const values = data[`${filter}Values`];
       if (values.length !== filterState[filter]?.length) {
         newState[filter] = values;
       }
     });
+
+    if ((data?.tags?.length ?? 0) !== filterState.tags?.length) {
+      newState.tags = data.tags.map(({ label }) => ({ value: label, label }));
+    }
 
     if (Object.keys(newState).length) {
       setFilterState(prevState => ({ ...prevState, ...newState }));

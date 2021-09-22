@@ -58,7 +58,7 @@ export default class Container extends React.Component {
       path: 'licenses/refdata/LicenseOrg/role',
       shouldRefresh: () => false,
     },
-    tagsValues: {
+    tags: {
       type: 'okapi',
       path: 'tags?limit=100',
       records: 'tags',
@@ -128,7 +128,7 @@ export default class Container extends React.Component {
           orgRoleValues: resources?.orgRoleValues?.records ?? [],
           statusValues: resources?.statusValues?.records ?? [],
           typeValues: resources?.typeValues?.records ?? [],
-          tagsValues: resources?.tagsValues?.records ?? [],
+          tags: resources?.tags?.records ?? [],
           terms: resources?.terms?.records ?? [],
         }}
         onNeedMoreData={this.handleNeedMoreData}
