@@ -1,6 +1,9 @@
 # Change history for ui-plugin-find-license
 
-## 7.0.0 (In Progress)
+## 8.0.0 2021-10-06
+* Upgrade to stripes v7.
+* Bring search options in ui-plugin-find-license in line with ui-licenses search and filter. ERM-1601
+* Added descriptions to visible permission sets. ERM-1599
 * Included interface dependency for licenses 4.0
 
 ## 6.1.0 2021-06-16
