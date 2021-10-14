@@ -10,5 +10,8 @@
     "prop.startDate": "시작일",
     "prop.status": "상태",
     "prop.type": "유형",
-    "permission.search": "라이선스 플러그인 찾기 : 라이선스 검색"
+    "permission.search": "라이선스 플러그인 찾기 : 라이선스 검색",
+    "organizations.selectRole": "Select a role",
+    "prop.tags": "Tags",
+    "term": "Term"
 }
