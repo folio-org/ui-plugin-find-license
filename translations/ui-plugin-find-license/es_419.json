@@ -10,5 +10,8 @@
     "prop.startDate": "Fecha inicio",
     "prop.status": "Estado",
     "prop.type": "Tipo",
-    "permission.search": "Encuentra el plugin de la licencia: Buscar licencias"
+    "permission.search": "Encuentra el plugin de la licencia: Buscar licencias",
+    "organizations.selectRole": "Select a role",
+    "prop.tags": "Tags",
+    "term": "Term"
 }
