@@ -38,8 +38,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "yarn run test:bigtest",
-    "test:bigtest": "stripes test karma --bundle --karma.singleRun --karma.browsers ChromeDocker --karma.reporters mocha junit --coverage",
+    "test": "stripes test karma",
     "test:jest": "jest --ci --coverage",
     "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-find-license ./translations/ui-plugin-find-license/compiled"
   },

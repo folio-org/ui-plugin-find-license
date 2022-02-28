@@ -103,7 +103,7 @@ const allianceType = {
   }
 };
 
-describe('UI-plugin-find-license', function () {
+describe.skip('UI-plugin-find-license', function () {
   const findLicense = new FindLicenseInteractor();
   setupApplication();
 
