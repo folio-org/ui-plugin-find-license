@@ -1,5 +1,7 @@
 # Change history for ui-plugin-find-license
-
+## 8.1.0 2022-03-03
+* ERM-1995 Prepare Plugin Find Agreement for RTL development
+* Updated stripes dependencies
 ## 8.0.0 2021-10-06
 * Upgrade to stripes v7.
 * Bring search options in ui-plugin-find-license in line with ui-licenses search and filter. ERM-1601
