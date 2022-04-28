@@ -1,5 +1,6 @@
 # Change history for ui-plugin-find-license
 ## 8.2.0 In progress
+* ERM-2103 Replace babel-eslint with @babel/eslint-parser
 ## 8.1.0 2022-03-03
 * ERM-1995 Prepare Plugin Find Agreement for RTL development
 * Updated stripes dependencies
