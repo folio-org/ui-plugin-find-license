@@ -39,6 +39,10 @@ export default function config() {
 
   this.get('/licenses/org', () => []);
 
+  this.get('/licenses/custprops', () => []);
+
+  this.get('/tags', { tags: [] });
+
   this.get('/licenses/refdata/License/status', () => {
     return [
       {

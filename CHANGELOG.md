@@ -1,6 +1,17 @@
 # Change history for ui-plugin-find-license
+## 8.2.0 In progress
+* ERM-2103 Replace babel-eslint with @babel/eslint-parser
+## 8.1.0 2022-03-03
+* ERM-1995 Prepare Plugin Find Agreement for RTL development
+* Updated stripes dependencies
+## 8.0.0 2021-10-06
+* Upgrade to stripes v7.
+* Bring search options in ui-plugin-find-license in line with ui-licenses search and filter. ERM-1601
+* Added descriptions to visible permission sets. ERM-1599
+* Included interface dependency for licenses 4.0
 
-## 6.1.0 In progress
+## 6.1.0 2021-06-16
+* ERM-1599 Add descriptions to visible permission set in ui-plugin-find-license
 
 ## 6.0.0 2021-03-18
 * Fixed incorrect start date in plugin. ERM-1237

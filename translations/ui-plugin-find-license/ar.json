@@ -10,5 +10,8 @@
     "prop.startDate": "تاريخ البدء",
     "prop.status": "الحالة",
     "prop.type": "النوع",
-    "permission.search": "برنامج باحث التراخيص المساعد: ابحث التراخيص"
+    "permission.search": "برنامج باحث التراخيص المساعد: ابحث التراخيص",
+    "organizations.selectRole": "اختر دورًا",
+    "prop.tags": "الوسوم",
+    "term": "مصطلح"
 }

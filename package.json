@@ -1,6 +1,6 @@
 {
   "name": "@folio/plugin-find-license",
-  "version": "6.1.0",
+  "version": "8.2.0",
   "description": "License-finder for Stripes",
   "repository": "folio-org/ui-plugin-find-license",
   "publishConfig": {
@@ -17,7 +17,7 @@
     "pluginType": "find-license",
     "displayName": "ui-plugin-find-license.meta.title",
     "okapiInterfaces": {
-      "licenses": "1.0 2.0 3.0"
+      "licenses": "1.0 2.0 3.0 4.0"
     },
     "stripesDeps": [
       "@folio/stripes-erm-components"
@@ -38,39 +38,64 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "stripes test karma"
+    "test": "stripes test karma",
+    "test:jest": "jest --ci --coverage",
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-find-license ./translations/ui-plugin-find-license/compiled"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
     "@bigtest/interactor": "^0.9.1",
     "@bigtest/mocha": "^0.5.2",
     "@bigtest/react": "^0.1.2",
-    "@folio/eslint-config-stripes": "^5.2.0",
-    "@folio/stripes": "^6.0.0",
-    "@folio/stripes-cli": "^2.0.0",
+    "@folio/eslint-config-stripes": "^6.1.0",
+    "@folio/stripes": "^7.1.0",
+    "@folio/stripes-cli": "^2.5.0",
+    "@formatjs/cli": "^4.2.31",
+    "@folio/stripes-testing": "^4.2.0",
+    "@testing-library/dom": "^7.26.6",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/user-event": "^12.2.2",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "@babel/eslint-parser": "^7.15.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
     "core-js": "^3.6.1",
-    "babel-eslint": "^9.0.0",
-    "eslint": "^6.2.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jest-dom": "^3.2.4",
+    "eslint-plugin-testing-library": "^3.10.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-css-modules": "^2.1.0",
+    "jest-junit": "^12.0.0",
     "faker": "^4.1.0",
     "inflected": "^2.0.4",
     "miragejs": "^0.1.40",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-intl": "^5.8.1",
     "react-router-dom": "^5.2.0",
+    "sinon": "^9.0.2",
+    "react-query": "^3.6.0",
     "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
-    "@folio/stripes-erm-components": "^5.0.0",
+    "@folio/stripes-erm-components": "^6.1.0",
+    "@folio/stripes-testing": "^4.2.0",
+    "@testing-library/react": "^12.1.2",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.4.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "@folio/stripes": "^6.0.0",
-    "react": "*",
+    "@folio/stripes": "^7.1.0",
+    "react": "^17.0.2",
     "react-intl": "^5.8.1",
     "react-router-dom": "^5.2.0"
   }

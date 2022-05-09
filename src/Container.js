@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 
 import { StripesConnectedSource } from '@folio/stripes/smart-components';
-import { getSASParams } from '@folio/stripes-erm-components';
+import { generateQueryParams } from '@folio/stripes-erm-components';
 
 import View from './View';
 
 const INITIAL_RESULT_COUNT = 100;
 const RESULT_COUNT_INCREMENT = 100;
+const RECORDS_PER_REQUEST = 100;
 
 export default class Container extends React.Component {
   static manifest = Object.freeze({
@@ -19,7 +19,7 @@ export default class Container extends React.Component {
       perRequest: RESULT_COUNT_INCREMENT,
       limitParam: 'perPage',
       path: 'licenses/licenses',
-      params: getSASParams({
+      params: generateQueryParams({
         columnMap: {
           'Name': 'name',
           'Type': 'type',
@@ -28,11 +28,18 @@ export default class Container extends React.Component {
           'End Date': 'endDate'
         },
         filterKeys: {
-          orgs: 'orgs.org',
-          role: 'orgs.role',
+          agreementStatus: 'agreementStatus.value',
+          org: 'orgs.org',
+          role: 'orgs.roles.role',
+          status: 'status.value',
+          tags: 'tags.value',
+          type: 'type.value'
         },
-        queryGetter: r => r.licenseSearchParams,
-        searchKey: 'name',
+        searchKey: 'name,alternateNames.name,description',
+        sortKeys: {
+          status: 'status.value',
+          type: 'type.value',
+        },
       })
     },
     statusValues: {
@@ -43,6 +50,7 @@ export default class Container extends React.Component {
     typeValues: {
       type: 'okapi',
       path: 'licenses/refdata/License/type',
+      perRequest: RECORDS_PER_REQUEST,
       shouldRefresh: () => false,
     },
     orgRoleValues: {
@@ -50,12 +58,17 @@ export default class Container extends React.Component {
       path: 'licenses/refdata/LicenseOrg/role',
       shouldRefresh: () => false,
     },
-    licenseSearchParams: {
-      initialValue: {
-        filters: 'status.Active',
-        sort: 'name',
-      }
+    tags: {
+      type: 'okapi',
+      path: 'tags?limit=100',
+      records: 'tags',
     },
+    terms: {
+      type: 'okapi',
+      path: 'licenses/custprops',
+      shouldRefresh: () => false,
+    },
+    query: { initialValue: {} },
     resultCount: { initialValue: INITIAL_RESULT_COUNT },
   });
 
@@ -82,8 +95,8 @@ export default class Container extends React.Component {
       this.searchField.current.focus();
     }
 
-    this.props.mutator.licenseSearchParams.update({
-      filters: 'status.Active'
+    this.props.mutator.query.update({
+      filters: 'status.active'
     });
   }
 
@@ -93,16 +106,12 @@ export default class Container extends React.Component {
     }
   }
 
-  querySetter = ({ nsValues, state }) => {
-    if (/reset/.test(state.changeType)) {
-      this.props.mutator.licenseSearchParams.replace(nsValues);
-    } else {
-      this.props.mutator.licenseSearchParams.update(nsValues);
-    }
+  querySetter = ({ nsValues }) => {
+    this.props.mutator.query.update(nsValues);
   }
 
   queryGetter = () => {
-    return get(this.props.resources, 'licenseSearchParams', {});
+    return this.props?.resources?.query ?? {};
   }
 
   render() {
@@ -115,10 +124,12 @@ export default class Container extends React.Component {
     return (
       <View
         data={{
-          licenses: get(resources, 'licenses.records', []),
-          orgRoleValues: get(resources, 'orgRoleValues.records', []),
-          statusValues: get(resources, 'statusValues.records', []),
-          typeValues: get(resources, 'typeValues.records', []),
+          licenses: resources?.licenses?.records ?? [],
+          orgRoleValues: resources?.orgRoleValues?.records ?? [],
+          statusValues: resources?.statusValues?.records ?? [],
+          typeValues: resources?.typeValues?.records ?? [],
+          tags: resources?.tags?.records ?? [],
+          terms: resources?.terms?.records ?? [],
         }}
         onNeedMoreData={this.handleNeedMoreData}
         onSelectRow={onSelectRow}

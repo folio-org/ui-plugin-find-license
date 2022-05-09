@@ -72,7 +72,7 @@ export default class View extends React.Component {
     type: ({ type }) => type?.label,
     status: ({ status }) => status?.label,
     startDate: ({ startDate }) => (startDate ? <FormattedUTCDate value={startDate} /> : ''),
-    endDate: license => <LicenseEndDate license={license} />,
+    endDate: license => <LicenseEndDate license={license} renderNullIfEmpty />,
   }
 
   rowFormatter = (row) => {
@@ -172,7 +172,7 @@ export default class View extends React.Component {
     return (
       <div ref={contentRef} data-test-licenses>
         <SearchAndSortQuery
-          initialFilterState={{ status: ['Active'] }}
+          initialFilterState={{ status: ['active'] }}
           initialSearchState={{ query: '' }}
           initialSortState={{ sort: 'name' }}
           queryGetter={queryGetter}

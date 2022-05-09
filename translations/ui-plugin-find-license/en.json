@@ -1,16 +1,17 @@
 {
   "meta.title": "License Finder Plugin",
   "permission.search": "Find License Plugin: Search licenses",
-
   "licenses": "Licenses",
   "selectLicense": "Select license",
   "searchInputLabel": "Search licenses",
-
+  "prop.startDate": "Start date",
   "prop.endDate": "End date",
   "prop.name": "Name",
   "prop.organization": "Organization",
   "prop.organizationRole": "Organization role",
-  "prop.startDate": "Start date",
+  "organizations.selectRole": "Select a role",
   "prop.status": "Status",
-  "prop.type": "Type"
+  "prop.type": "Type",
+  "prop.tags": "Tags",
+  "term": "Term"
 }

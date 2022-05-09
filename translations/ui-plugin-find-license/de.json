@@ -10,5 +10,8 @@
     "prop.startDate": "Startdatum",
     "prop.status": "Status",
     "prop.type": "Typ",
-    "permission.search": "Plugin: Lizenzverträge suchen"
+    "permission.search": "Plugin: Lizenzverträge suchen",
+    "organizations.selectRole": "Rolle auswählen",
+    "prop.tags": "Tags",
+    "term": "Bedingung"
 }
