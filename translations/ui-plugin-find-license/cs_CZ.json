@@ -1,8 +1,8 @@
 {
-    "meta.title": "License Finder Plugin",
+    "meta.title": "Plugin vyhledávání licencí",
     "selectLicense": "Select license",
-    "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
+    "licenses": "Licence",
+    "searchInputLabel": "Vyhledat licence",
     "prop.endDate": "End date",
     "prop.name": "Name",
     "prop.organization": "Organization",
@@ -10,7 +10,7 @@
     "prop.startDate": "Start date",
     "prop.status": "Status",
     "prop.type": "Type",
-    "permission.search": "Find License Plugin: Search licenses",
+    "permission.search": "Plugin Vyhledat-licenci: Vyhledávání licencí",
     "organizations.selectRole": "Vyberte roli",
     "prop.tags": "Tagy",
     "term": "Podmínka"
