@@ -1,8 +1,8 @@
 {
-    "meta.title": "许可证查找器插件",
-    "selectLicense": "選擇授權憑證",
+    "meta.title": "授權查找器（插件）",
+    "selectLicense": "選擇授權",
     "licenses": "授權憑證",
-    "searchInputLabel": "查詢授權憑證",
+    "searchInputLabel": "查詢授權",
     "prop.endDate": "结束日期",
     "prop.name": "名稱",
     "prop.organization": "組織機構",
@@ -10,8 +10,8 @@
     "prop.startDate": "開始日期",
     "prop.status": "狀態",
     "prop.type": "類型",
-    "permission.search": "查找许可证插件：搜索许可证",
-    "organizations.selectRole": "Select a role",
-    "prop.tags": "Tags",
-    "term": "Term"
+    "permission.search": "尋找授權（插件）：查詢授權",
+    "organizations.selectRole": "選擇一個身份",
+    "prop.tags": "標籤",
+    "term": "條款"
 }

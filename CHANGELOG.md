@@ -1,4 +1,7 @@
 # Change history for ui-plugin-find-license
+
+## 8.1.1 2022-06-07
+* ERM-2188. Backport recent zh_TW translations
 ## 8.1.0 2022-03-03
 * ERM-1995 Prepare Plugin Find Agreement for RTL development
 * Updated stripes dependencies
