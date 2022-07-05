@@ -1,6 +1,7 @@
 # Change history for ui-plugin-find-license
-## 8.2.0 In progress
+## 8.2.0 2022-07-05
 * ERM-2103 Replace babel-eslint with @babel/eslint-parser
+* ERM-1971 Bump eslint-config stripes version
 ## 8.1.0 2022-03-03
 * ERM-1995 Prepare Plugin Find Agreement for RTL development
 * Updated stripes dependencies
