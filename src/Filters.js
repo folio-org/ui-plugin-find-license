@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
+import { CustomPropertiesFilter } from '@k-int/stripes-kint-components';
+
 import { Accordion, AccordionSet, FilterAccordionHeader, Selection } from '@folio/stripes/components';
 import { CheckboxFilter, MultiSelectionFilter } from '@folio/stripes/smart-components';
-import { CustomPropertyFilters, DateFilter, OrganizationSelection } from '@folio/stripes-erm-components';
+import { DateFilter, OrganizationSelection } from '@folio/stripes-erm-components';
 
 const FILTERS = [
   'status',
   'type',
 ];
 
+const CUSTPROP_ENDPOINT = 'licenses/custprops';
 export default function Filters({ activeFilters, data, filterHandlers }) {
   const intl = useIntl();
 
@@ -171,11 +174,20 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
   };
 
   const renderCustomPropertyFilters = () => {
-    return <CustomPropertyFilters
+    return <CustomPropertiesFilter
       activeFilters={activeFilters}
-      customProperties={data.terms || []}
-      custPropName="term"
+      customPropertiesEndpoint={CUSTPROP_ENDPOINT}
       filterHandlers={filterHandlers}
+      labelOverrides={{
+        customProperty: <FormattedMessage id="ui-plugin-find-license.term" />,
+        customProperties: <FormattedMessage id="ui-plugin-find-license.terms" />,
+        filtersApplied: (count) => <FormattedMessage id="ui-plugin-find-license.terms.filtersApplied" values={{ count }} />,
+        editCustomPropertyFilters: <FormattedMessage id="ui-plugin-find-license.terms.editCustomPropertyFilters" />,
+        filterBuilder: <FormattedMessage id="ui-plugin-find-license.terms.filterBuilder" />,
+        customPropertyFilter: (index) => <FormattedMessage id="ui-plugin-find-license.terms.filterIndex" values={{ index: index + 1 }} />,
+        removeFilter: (index) => <FormattedMessage id="ui-plugin-find-license.terms.removeFilter" values={{ index: index + 1 }} />,
+        retiredName: (name) => intl.formatMessage({ id: 'ui-plugin-find-license.terms.deprecated' }, { name }),
+      }}
     />;
   };
 

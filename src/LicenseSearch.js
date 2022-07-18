@@ -1,80 +1,70 @@
-import React from 'react';
+import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '@folio/stripes/components';
 import contains from 'dom-helpers/query/contains';
 import Modal from './Modal';
 
 const triggerId = 'find-license-trigger';
-class LicenseSearch extends React.Component {
-  static propTypes = {
-    renderTrigger: PropTypes.func,
+const LicenseSearch = (props) => {
+  const {
+    renderTrigger
+  } = props;
+
+  const modalRef = useRef();
+  const modalTrigger = useRef();
+
+  const [open, setOpen] = useState(false);
+
+  const openModal = () => {
+    setOpen(true);
   };
 
-  constructor(props) {
-    super(props);
+  const closeModal = () => {
+    setOpen(false);
 
-    this.modalRef = React.createRef();
-    this.modalTrigger = React.createRef();
-    this.state = {
-      open: false,
-    };
-  }
+    if (modalRef.current && modalTrigger.current && contains(modalRef.current, document.activeElement)) {
+      modalTrigger.current.focus();
+    }
+  };
 
-  openModal = () => {
-    this.setState({ open: true });
-  }
-
-  closeModal = () => {
-    this.setState({ open: false }, () => {
-      if (this.modalRef.current && this.modalTrigger.current) {
-        if (contains(this.modalRef.current, document.activeElement)) {
-          this.modalTrigger.current.focus();
-        }
-      }
-    });
-  }
-
-  renderDefaultTrigger() {
+  const renderDefaultTrigger = () => {
     return (
       <Button
-        buttonRef={this.modalTrigger}
+        buttonRef={modalTrigger}
         buttonStyle="primary noRightRadius"
         id={triggerId}
-        onClick={this.openModal}
+        onClick={openModal}
       >
         <Icon color="#fff" icon="search" />
       </Button>
     );
-  }
+  };
 
-  renderTriggerButton() {
-    const {
-      renderTrigger,
-    } = this.props;
-
+  const renderTriggerButton = () => {
     return renderTrigger
       ? renderTrigger({
         id: triggerId,
-        onClick: this.openModal,
-        buttonRef: this.modalTrigger,
+        onClick: openModal,
+        buttonRef: modalTrigger,
       })
-      : this.renderDefaultTrigger();
-  }
+      : renderDefaultTrigger();
+  };
 
-  render() {
-    return (
-      <>
-        {this.renderTriggerButton()}
-        <Modal
-          modalRef={this.modalRef}
-          onClose={this.closeModal}
-          open={this.state.open}
-          {...this.props}
-        />
-      </>
+  return (
+    <>
+      {renderTriggerButton()}
+      <Modal
+        modalRef={modalRef}
+        onClose={closeModal}
+        open={open}
+        {...props}
+      />
+    </>
+  );
+};
 
-    );
-  }
-}
+LicenseSearch.propTypes = {
+  renderTrigger: PropTypes.func,
+};
 
 export default LicenseSearch;
