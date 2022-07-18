@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'lodash';
 import { FormattedMessage } from 'react-intl';
@@ -28,54 +28,56 @@ import Filters from './Filters';
 
 import css from './View.css';
 
-export default class View extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    contentRef: PropTypes.object,
-    data: PropTypes.object,
-    onNeedMoreData: PropTypes.func,
-    onSelectRow: PropTypes.func,
-    queryGetter: PropTypes.func,
-    querySetter: PropTypes.func,
-    searchString: PropTypes.string,
-    source: PropTypes.object,
-    visibleColumns: PropTypes.arrayOf(PropTypes.string),
-  }
+const View = ({
+  contentRef,
+  data = {},
+  onNeedMoreData,
+  onSelectRow,
+  queryGetter,
+  querySetter,
+  source,
+  visibleColumns = ['name', 'type', 'status', 'startDate', 'endDate']
+}) => {
+  const [filterPaneIsVisible, setFilterPaneIsVisible] = useState(true);
 
-  static defaultProps = {
-    data: {},
-    searchString: '',
-    visibleColumns: ['name', 'type', 'status', 'startDate', 'endDate'],
-  }
+  const searchField = useRef();
+  useEffect(() => {
+    if (searchField.current) {
+      searchField.current.focus();
+    }
+  }, []); // This isn't particularly great, but in the interests of saving time migrating, it will have to do
 
-  state = {
-    filterPaneIsVisible: true,
-  }
+  const query = queryGetter() || {};
+  const count = source ? source.totalCount() : 0;
+  const sortOrder = query.sort || '';
 
-  columnMapping = {
+  const columnMapping = {
     name: <FormattedMessage id="ui-plugin-find-license.prop.name" />,
     type: <FormattedMessage id="ui-plugin-find-license.prop.type" />,
     status: <FormattedMessage id="ui-plugin-find-license.prop.status" />,
     startDate: <FormattedMessage id="ui-plugin-find-license.prop.startDate" />,
     endDate: <FormattedMessage id="ui-plugin-find-license.prop.endDate" />
-  }
+  };
 
-  columnWidths = {
+  const columnWidths = {
     name: 300,
     type: 150,
     status: 150,
     startDate: 120,
     endDate: 120
-  }
+  };
 
-  formatter = {
+  const formatter = {
     type: ({ type }) => type?.label,
     status: ({ status }) => status?.label,
-    startDate: ({ startDate }) => (startDate ? <FormattedUTCDate value={startDate} /> : ''),
+    startDate: ({ startDate }) => {
+      if (startDate) return <FormattedUTCDate value={startDate} />;
+      return '';
+    },
     endDate: license => <LicenseEndDate license={license} renderNullIfEmpty />,
-  }
+  };
 
-  rowFormatter = (row) => {
+  const rowFormatter = (row) => {
     const { rowClass, rowData, rowIndex, rowProps = {}, cells } = row;
 
     return (
@@ -84,8 +86,8 @@ export default class View extends React.Component {
         className={rowClass}
         data-label={[
           rowData.name,
-          this.formatter.type(rowData),
-          this.formatter.status(rowData),
+          formatter.type(rowData),
+          formatter.status(rowData),
         ].join('...')}
         type="button"
         {...rowProps}
@@ -93,15 +95,13 @@ export default class View extends React.Component {
         {cells}
       </button>
     );
-  }
+  };
 
-  toggleFilterPane = () => {
-    this.setState(curState => ({
-      filterPaneIsVisible: !curState.filterPaneIsVisible,
-    }));
-  }
+  const toggleFilterPane = () => {
+    setFilterPaneIsVisible(!filterPaneIsVisible);
+  };
 
-  renderIsEmptyMessage = (query, source) => {
+  const renderIsEmptyMessage = () => {
     if (!source) {
       return 'no source yet';
     }
@@ -116,10 +116,9 @@ export default class View extends React.Component {
         />
       </div>
     );
-  }
+  };
 
-  renderResultsFirstMenu = (filters) => {
-    const { filterPaneIsVisible } = this.state;
+  const renderResultsFirstMenu = (filters) => {
     const filterCount = filters.string !== '' ? filters.string.split(',').length : 0;
     const hideOrShowMessageId = filterPaneIsVisible ?
       'stripes-smart-components.hideSearchPane' : 'stripes-smart-components.showSearchPane';
@@ -133,7 +132,7 @@ export default class View extends React.Component {
                 <FilterPaneToggle
                   aria-label={`${hideOrShowMessage}...s${appliedFiltersMessage}`}
                   badge={!filterPaneIsVisible && filterCount ? filterCount : undefined}
-                  onClick={this.toggleFilterPane}
+                  onClick={toggleFilterPane}
                   visible={filterPaneIsVisible}
                 />
               )}
@@ -142,149 +141,148 @@ export default class View extends React.Component {
         </FormattedMessage>
       </PaneMenu>
     );
-  }
+  };
 
-  renderResultsPaneSubtitle = (source) => {
+  const renderResultsPaneSubtitle = () => {
     if (source && source.loaded()) {
-      const count = source ? source.totalCount() : 0;
       return <FormattedMessage id="stripes-smart-components.searchResultsCountHeader" values={{ count }} />;
     }
 
     return <FormattedMessage id="stripes-smart-components.searchCriteria" />;
-  }
+  };
 
-  render() {
-    const {
-      contentRef,
-      data,
-      onNeedMoreData,
-      onSelectRow,
-      queryGetter,
-      querySetter,
-      source,
-      visibleColumns,
-    } = this.props;
 
-    const query = queryGetter() || {};
-    const count = source ? source.totalCount() : 0;
-    const sortOrder = query.sort || '';
+  return (
+    <div ref={contentRef} data-test-licenses>
+      <SearchAndSortQuery
+        initialFilterState={{ status: ['active'] }}
+        initialSearchState={{ query: '' }}
+        initialSortState={{ sort: 'name' }}
+        queryGetter={queryGetter}
+        querySetter={querySetter}
+        setQueryOnMount
+        syncToLocationSearch={false}
+      >
+        {
+          ({
+            searchValue,
+            getSearchHandlers,
+            onSubmitSearch,
+            onSort,
+            getFilterHandlers,
+            activeFilters,
+            filterChanged,
+            searchChanged,
+            resetAll,
+          }) => {
+            const disableReset = () => (!filterChanged && !searchChanged);
 
-    return (
-      <div ref={contentRef} data-test-licenses>
-        <SearchAndSortQuery
-          initialFilterState={{ status: ['active'] }}
-          initialSearchState={{ query: '' }}
-          initialSortState={{ sort: 'name' }}
-          queryGetter={queryGetter}
-          querySetter={querySetter}
-          syncToLocationSearch={false}
-        >
-          {
-            ({
-              searchValue,
-              getSearchHandlers,
-              onSubmitSearch,
-              onSort,
-              getFilterHandlers,
-              activeFilters,
-              filterChanged,
-              searchChanged,
-              resetAll,
-            }) => {
-              const disableReset = () => (!filterChanged && !searchChanged);
-
-              return (
-                <Paneset id="licenses-paneset">
-                  {this.state.filterPaneIsVisible &&
-                    <Pane
-                      defaultWidth="22%"
-                      onClose={this.toggleFilterPane}
-                      paneTitle={<FormattedMessage id="stripes-smart-components.searchAndFilter" />}
-                    >
-                      <form onSubmit={onSubmitSearch}>
-                        {/* TODO: Use forthcoming <SearchGroup> or similar component */}
-                        <div className={css.searchGroupWrap}>
-                          <FormattedMessage id="ui-plugin-find-license.searchInputLabel">
-                            {ariaLabel => (
-                              <SearchField
-                                aria-label={ariaLabel}
-                                autoFocus
-                                className={css.searchField}
-                                data-test-license-search-input
-                                id="input-license-search"
-                                inputRef={this.searchField}
-                                marginBottom0
-                                name="query"
-                                onChange={getSearchHandlers().query}
-                                onClear={getSearchHandlers().reset}
-                                value={searchValue.query}
-                              />
-                            )}
-                          </FormattedMessage>
-                          <Button
-                            buttonStyle="primary"
-                            disabled={!searchValue.query || searchValue.query === ''}
-                            fullWidth
-                            id="clickable-search-licenses"
-                            marginBottom0
-                            type="submit"
-                          >
-                            <FormattedMessage id="stripes-smart-components.search" />
-                          </Button>
-                        </div>
-                        <div className={css.resetButtonWrap}>
-                          <Button
-                            buttonStyle="none"
-                            disabled={disableReset()}
-                            id="clickable-reset-all"
-                            onClick={resetAll}
-                          >
-                            <Icon icon="times-circle-solid">
-                              <FormattedMessage id="stripes-smart-components.resetAll" />
-                            </Icon>
-                          </Button>
-                        </div>
-                        <Filters
-                          activeFilters={activeFilters.state}
-                          data={data}
-                          filterHandlers={getFilterHandlers()}
-                        />
-                      </form>
-                    </Pane>
-                  }
+            return (
+              <Paneset id="licenses-paneset">
+                {filterPaneIsVisible &&
                   <Pane
-                    appIcon={<AppIcon app="licenses" />}
-                    defaultWidth="fill"
-                    firstMenu={this.renderResultsFirstMenu(activeFilters)}
-                    padContent={false}
-                    paneSub={this.renderResultsPaneSubtitle(source)}
-                    paneTitle={<FormattedMessage id="ui-plugin-find-license.licenses" />}
+                    defaultWidth="22%"
+                    onClose={toggleFilterPane}
+                    paneTitle={<FormattedMessage id="stripes-smart-components.searchAndFilter" />}
                   >
-                    <MultiColumnList
-                      autosize
-                      columnMapping={this.columnMapping}
-                      columnWidths={this.columnWidths}
-                      contentData={data.licenses}
-                      formatter={this.formatter}
-                      id="list-licenses"
-                      isEmptyMessage={this.renderIsEmptyMessage(query, source)}
-                      onHeaderClick={onSort}
-                      onNeedMoreData={onNeedMoreData}
-                      onRowClick={onSelectRow}
-                      rowFormatter={this.rowFormatter}
-                      sortDirection={sortOrder.startsWith('-') ? 'descending' : 'ascending'}
-                      sortOrder={sortOrder.replace(/^-/, '').replace(/,.*/, '')}
-                      totalCount={count}
-                      virtualize
-                      visibleColumns={visibleColumns}
-                    />
+                    <form onSubmit={onSubmitSearch}>
+                      {/* TODO: Use forthcoming <SearchGroup> or similar component */}
+                      <div className={css.searchGroupWrap}>
+                        <FormattedMessage id="ui-plugin-find-license.searchInputLabel">
+                          {ariaLabel => (
+                            <SearchField
+                              aria-label={ariaLabel}
+                              autoFocus
+                              className={css.searchField}
+                              data-test-license-search-input
+                              id="input-license-search"
+                              inputRef={searchField}
+                              marginBottom0
+                              name="query"
+                              onChange={getSearchHandlers().query}
+                              onClear={getSearchHandlers().reset}
+                              value={searchValue.query}
+                            />
+                          )}
+                        </FormattedMessage>
+                        <Button
+                          buttonStyle="primary"
+                          disabled={!searchValue.query || searchValue.query === ''}
+                          fullWidth
+                          id="clickable-search-licenses"
+                          marginBottom0
+                          type="submit"
+                        >
+                          <FormattedMessage id="stripes-smart-components.search" />
+                        </Button>
+                      </div>
+                      <div className={css.resetButtonWrap}>
+                        <Button
+                          buttonStyle="none"
+                          disabled={disableReset()}
+                          id="clickable-reset-all"
+                          onClick={resetAll}
+                        >
+                          <Icon icon="times-circle-solid">
+                            <FormattedMessage id="stripes-smart-components.resetAll" />
+                          </Icon>
+                        </Button>
+                      </div>
+                      <Filters
+                        activeFilters={activeFilters.state}
+                        data={data}
+                        filterHandlers={getFilterHandlers()}
+                      />
+                    </form>
                   </Pane>
-                </Paneset>
-              );
-            }
+                }
+                <Pane
+                  appIcon={<AppIcon app="licenses" />}
+                  defaultWidth="fill"
+                  firstMenu={renderResultsFirstMenu(activeFilters)}
+                  padContent={false}
+                  paneSub={renderResultsPaneSubtitle()}
+                  paneTitle={<FormattedMessage id="ui-plugin-find-license.licenses" />}
+                >
+                  <MultiColumnList
+                    autosize
+                    columnMapping={columnMapping}
+                    columnWidths={columnWidths}
+                    contentData={data.licenses}
+                    formatter={formatter}
+                    id="list-licenses"
+                    isEmptyMessage={renderIsEmptyMessage()}
+                    onHeaderClick={onSort}
+                    onNeedMoreData={onNeedMoreData}
+                    onRowClick={onSelectRow}
+                    rowFormatter={rowFormatter}
+                    sortDirection={sortOrder.startsWith('-') ? 'descending' : 'ascending'}
+                    sortOrder={sortOrder.replace(/^-/, '').replace(/,.*/, '')}
+                    totalCount={count}
+                    virtualize
+                    visibleColumns={visibleColumns}
+                  />
+                </Pane>
+              </Paneset>
+            );
           }
-        </SearchAndSortQuery>
-      </div>
-    );
-  }
-}
+        }
+      </SearchAndSortQuery>
+    </div>
+  );
+};
+
+
+View.propTypes = {
+  children: PropTypes.node,
+  contentRef: PropTypes.object,
+  data: PropTypes.object,
+  onNeedMoreData: PropTypes.func,
+  onSelectRow: PropTypes.func,
+  queryGetter: PropTypes.func,
+  querySetter: PropTypes.func,
+  source: PropTypes.object,
+  visibleColumns: PropTypes.arrayOf(PropTypes.string),
+};
+
+export default View;
