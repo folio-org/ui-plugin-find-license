@@ -13,5 +13,12 @@
     "permission.search": "Plugin Vyhledat-licenci: Vyhledávání licencí",
     "organizations.selectRole": "Vyberte roli",
     "prop.tags": "Tagy",
-    "term": "Podmínka"
+    "term": "Podmínka",
+    "terms": "Termíny",
+    "terms.filtersApplied": "{count} použitý(ch) filtr(ů) termínů",
+    "terms.editCustomPropertyFilters": "Upravit filtry termínů",
+    "terms.filterBuilder": "Tvorba filtru termínů",
+    "terms.filterIndex": "Filtr termínů {index}",
+    "terms.removeFilter": "Odebrat filtr výrazů {index}",
+    "terms.deprecated": "ZASTARALÉ: {name}"
 }

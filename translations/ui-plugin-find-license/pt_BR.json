@@ -13,5 +13,12 @@
     "permission.search": "Plugin de pesquisar licenças: Pesquisar licenças",
     "organizations.selectRole": "Selecione uma função",
     "prop.tags": "Tags",
-    "term": "Termo"
+    "term": "Termo",
+    "terms": "Terms",
+    "terms.filtersApplied": "{count} term filters applied",
+    "terms.editCustomPropertyFilters": "Edit term filters",
+    "terms.filterBuilder": "Term filter builder",
+    "terms.filterIndex": "Term filter {index}",
+    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.deprecated": "DEPRECATED: {name}"
 }

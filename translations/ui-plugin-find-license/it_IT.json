@@ -13,5 +13,12 @@
     "permission.search": "Plugin ricerca license: Cerca license",
     "organizations.selectRole": "Seleziona un ruolo",
     "prop.tags": "Tag",
-    "term": "Termine"
+    "term": "Termine",
+    "terms": "Terms",
+    "terms.filtersApplied": "{count} term filters applied",
+    "terms.editCustomPropertyFilters": "Edit term filters",
+    "terms.filterBuilder": "Term filter builder",
+    "terms.filterIndex": "Term filter {index}",
+    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.deprecated": "DEPRECATED: {name}"
 }

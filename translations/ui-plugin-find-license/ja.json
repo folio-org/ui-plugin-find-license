@@ -13,5 +13,12 @@
     "permission.search": "ライセンスプラグインの検索：ライセンスの検索",
     "organizations.selectRole": "Select a role",
     "prop.tags": "タグ",
-    "term": "Term"
+    "term": "Term",
+    "terms": "Terms",
+    "terms.filtersApplied": "{count} term filters applied",
+    "terms.editCustomPropertyFilters": "Edit term filters",
+    "terms.filterBuilder": "Term filter builder",
+    "terms.filterIndex": "Term filter {index}",
+    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.deprecated": "DEPRECATED: {name}"
 }
