@@ -13,5 +13,12 @@
     "permission.search": "查找许可证插件：搜索许可证",
     "organizations.selectRole": "选择一个角色",
     "prop.tags": "标签",
-    "term": "术语"
+    "term": "术语",
+    "terms": "Terms",
+    "terms.filtersApplied": "{count} term filters applied",
+    "terms.editCustomPropertyFilters": "Edit term filters",
+    "terms.filterBuilder": "Term filter builder",
+    "terms.filterIndex": "Term filter {index}",
+    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.deprecated": "DEPRECATED: {name}"
 }
