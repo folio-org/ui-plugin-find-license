@@ -14,11 +14,11 @@
     "organizations.selectRole": "اختر دورًا",
     "prop.tags": "الوسوم",
     "term": "مصطلح",
-    "terms": "Terms",
+    "terms": "مصطلحات",
     "terms.filtersApplied": "{count} term filters applied",
     "terms.editCustomPropertyFilters": "Edit term filters",
     "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
+    "terms.filterIndex": "منقح المصطلحات {index}",
     "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms.deprecated": "مهمل: {name}"
 }

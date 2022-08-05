@@ -14,11 +14,11 @@
     "organizations.selectRole": "选择一个角色",
     "prop.tags": "标签",
     "term": "术语",
-    "terms": "Terms",
-    "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms": "条款",
+    "terms.filtersApplied": "应用{count}条款筛选",
+    "terms.editCustomPropertyFilters": "编辑条款筛选条件",
+    "terms.filterBuilder": "条款筛选构建器",
+    "terms.filterIndex": "条款筛选{index}",
+    "terms.removeFilter": "移除条款筛选{index}",
+    "terms.deprecated": "已弃用： {name}"
 }
