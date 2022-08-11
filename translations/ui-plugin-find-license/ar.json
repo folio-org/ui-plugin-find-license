@@ -16,9 +16,9 @@
     "term": "مصطلح",
     "terms": "مصطلحات",
     "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
+    "terms.editCustomPropertyFilters": "تحرير منقحات المصطلحات",
     "terms.filterBuilder": "Term filter builder",
     "terms.filterIndex": "منقح المصطلحات {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.removeFilter": "إزالة منقح المصطلحات {index}",
     "terms.deprecated": "مهمل: {name}"
 }
