@@ -17,7 +17,7 @@
     "terms": "مصطلحات",
     "terms.filtersApplied": "{count} term filters applied",
     "terms.editCustomPropertyFilters": "تحرير منقحات المصطلحات",
-    "terms.filterBuilder": "Term filter builder",
+    "terms.filterBuilder": "باني منقح المصطلحات",
     "terms.filterIndex": "منقح المصطلحات {index}",
     "terms.removeFilter": "إزالة منقح المصطلحات {index}",
     "terms.deprecated": "مهمل: {name}"
