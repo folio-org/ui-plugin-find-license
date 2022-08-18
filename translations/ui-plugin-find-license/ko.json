@@ -14,11 +14,11 @@
     "organizations.selectRole": "역할 선택",
     "prop.tags": "태그",
     "term": "조건",
-    "terms": "Terms",
-    "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms": "조건",
+    "terms.filtersApplied": "{count} 조건 필터 적용됨",
+    "terms.editCustomPropertyFilters": "조건 필터 편집",
+    "terms.filterBuilder": "조건 필터 빌더",
+    "terms.filterIndex": "조건 필터 {index}",
+    "terms.removeFilter": "조건 필터 {index} 제거",
+    "terms.deprecated": "사용되지 않음: {이름}"
 }
