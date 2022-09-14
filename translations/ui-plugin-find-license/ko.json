@@ -20,5 +20,5 @@
     "terms.filterBuilder": "조건 필터 빌더",
     "terms.filterIndex": "조건 필터 {index}",
     "terms.removeFilter": "조건 필터 {index} 제거",
-    "terms.deprecated": "사용되지 않음: {이름}"
+    "terms.deprecated": "사용되지 않음: {name}"
 }

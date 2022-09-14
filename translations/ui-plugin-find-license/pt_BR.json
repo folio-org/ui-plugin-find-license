@@ -19,6 +19,6 @@
     "terms.editCustomPropertyFilters": "Editar filtros de termos",
     "terms.filterBuilder": "Construtor de filtros de termo",
     "terms.filterIndex": "Filtro de termo {index}",
-    "terms.removeFilter": "Remover filtro de termo {índice}",
+    "terms.removeFilter": "Remover filtro de termo {index}",
     "terms.deprecated": "OBSOLETO: {name}"
 }
