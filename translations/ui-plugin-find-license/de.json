@@ -15,10 +15,10 @@
     "prop.tags": "Tags",
     "term": "Bedingung",
     "terms": "Terms",
-    "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms.filtersApplied": "{count} Bedingungsfilter angewandt",
+    "terms.editCustomPropertyFilters": "Bedingungsfilter bearbeiten",
+    "terms.filterBuilder": "Bedingungsfilter-Baukasten",
+    "terms.filterIndex": "Bedingungsfilter {index}",
+    "terms.removeFilter": "Bedingungsfilter {index} entfernen",
+    "terms.deprecated": "VERALTET: {name}"
 }
