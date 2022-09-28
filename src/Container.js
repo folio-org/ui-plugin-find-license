@@ -49,7 +49,7 @@ const Container = ({
     generateKiwtQueryParams({
       searchKey: 'name,alternateNames.name,description',
       filterKeys: {
-        org: 'orgs.org',
+        orgs: 'orgs.org',
         role: 'orgs.roles.role',
         status: 'status.value',
         tags: 'tags.value',
