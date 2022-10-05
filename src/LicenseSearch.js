@@ -1,5 +1,8 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+
+import { useIntlKeyStore } from '@k-int/stripes-kint-components';
+
 import { Button, Icon } from '@folio/stripes/components';
 import contains from 'dom-helpers/query/contains';
 import Modal from './Modal';
@@ -9,6 +12,11 @@ const LicenseSearch = (props) => {
   const {
     renderTrigger
   } = props;
+
+  // Piggyback on the translations `ui-licenses` already sets up for now
+  // The likelihood of anyone running ui-plugin-find-license and NOT ui-licenses seems very low.
+  const addKey = useIntlKeyStore(state => state.addKey);
+  addKey('ui-licenses');
 
   const modalRef = useRef();
   const modalTrigger = useRef();

@@ -106,6 +106,7 @@
   },
   "dependencies": {
     "@folio/stripes-testing": "^4.2.0",
+    "@k-int/stripes-kint-components": "^3.0.3",
     "@testing-library/react": "^12.1.2",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.4.0",
