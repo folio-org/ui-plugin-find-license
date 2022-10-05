@@ -178,16 +178,6 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
       activeFilters={activeFilters}
       customPropertiesEndpoint={CUSTPROP_ENDPOINT}
       filterHandlers={filterHandlers}
-      labelOverrides={{
-        customProperty: <FormattedMessage id="ui-plugin-find-license.term" />,
-        customProperties: <FormattedMessage id="ui-plugin-find-license.terms" />,
-        filtersApplied: (count) => <FormattedMessage id="ui-plugin-find-license.terms.filtersApplied" values={{ count }} />,
-        editCustomPropertyFilters: <FormattedMessage id="ui-plugin-find-license.terms.editCustomPropertyFilters" />,
-        filterBuilder: <FormattedMessage id="ui-plugin-find-license.terms.filterBuilder" />,
-        customPropertyFilter: (index) => <FormattedMessage id="ui-plugin-find-license.terms.filterIndex" values={{ index: index + 1 }} />,
-        removeFilter: (index) => <FormattedMessage id="ui-plugin-find-license.terms.removeFilter" values={{ index: index + 1 }} />,
-        retiredName: (name) => intl.formatMessage({ id: 'ui-plugin-find-license.terms.deprecated' }, { name }),
-      }}
     />;
   };
 
