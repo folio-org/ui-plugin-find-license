@@ -14,11 +14,11 @@
     "organizations.selectRole": "Seleziona un ruolo",
     "prop.tags": "Tag",
     "term": "Termine",
-    "terms": "Terms",
-    "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms": "Termini",
+    "terms.filtersApplied": "{count} filtri dei termini applicati",
+    "terms.editCustomPropertyFilters": "Modifica il filtro sui termini",
+    "terms.filterBuilder": "Generatore di filtri per termini",
+    "terms.filterIndex": "Filtro dei termini {index}",
+    "terms.removeFilter": "Rimuovi filtro termini {index}",
+    "terms.deprecated": "DEPRECATO: {name}"
 }
