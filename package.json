@@ -1,6 +1,6 @@
 {
   "name": "@folio/plugin-find-license",
-  "version": "8.3.0",
+  "version": "8.4.0",
   "description": "License-finder for Stripes",
   "repository": "folio-org/ui-plugin-find-license",
   "publishConfig": {
