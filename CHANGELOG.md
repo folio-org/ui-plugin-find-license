@@ -1,7 +1,11 @@
 # Change history for ui-plugin-find-license
-## 8.3.0 In progress
+## 8.3.0 2022-10-26
+* ERM-2394 Remove @folio/stripes-testing as direct dependency of ui-plugin-find-license
+* ERM-2376 Kint components dep not declared in ui-plugin-find-license
+* ERM-2326 stripes-erm-components should be a peer
+* ERM-2279 Refactor ui-plugin-find-license to react-query
+* ERM-2150 update outdated dependencies in ui-plugin-find-license
 * Bump to stripes-erm-components ^7.0.0
-
 
 ## 8.2.0 2022-07-05
 * ERM-2103 Replace babel-eslint with @babel/eslint-parser
