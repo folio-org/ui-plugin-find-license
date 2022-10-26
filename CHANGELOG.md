@@ -1,4 +1,6 @@
 # Change history for ui-plugin-find-license
+## 8.4.0 In progress
+
 ## 8.3.0 2022-10-26
 * ERM-2394 Remove @folio/stripes-testing as direct dependency of ui-plugin-find-license
 * ERM-2376 Kint components dep not declared in ui-plugin-find-license
