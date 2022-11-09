@@ -6,7 +6,7 @@ import { generateKiwtQueryParams, useRefdata } from '@k-int/stripes-kint-compone
 import { useOkapiKy } from '@folio/stripes/core';
 import { getRefdataValuesByDesc, useInfiniteFetch, useTags } from '@folio/stripes-erm-components';
 
-import View from './View';
+import View from './View/View';
 
 const RECORDS_PER_REQUEST = 100;
 
