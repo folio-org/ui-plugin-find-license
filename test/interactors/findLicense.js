@@ -8,7 +8,7 @@ import {
   isPresent,
 } from '@bigtest/interactor';
 
-import css from '../../src/LicenseSearch.css';
+import css from '../../src/LicenseSearch/LicenseSearch.css';
 
 @interactor class SearchField {
   static defaultScope = '[data-test-license-search-input]';
