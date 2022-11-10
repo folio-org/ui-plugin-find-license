@@ -1,5 +1,5 @@
-import '@folio/stripes-erm-components/test/jest/__mock__';
-import { renderWithIntl, mockErmComponents } from '@folio/stripes-erm-components/test/jest/helpers';
+
+import { renderWithIntl, mockErmComponents } from '@folio/stripes-erm-testing';
 import { MemoryRouter } from 'react-router-dom';
 import { Pane, SearchField, MultiColumnList } from '@folio/stripes-testing';
 import data from './testResources';
