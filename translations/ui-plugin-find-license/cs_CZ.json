@@ -14,11 +14,11 @@
     "organizations.selectRole": "Vyberte roli",
     "prop.tags": "Tagy",
     "term": "Podmínka",
-    "terms": "Termíny",
-    "terms.filtersApplied": "{count} použitý(ch) filtr(ů) termínů",
-    "terms.editCustomPropertyFilters": "Upravit filtry termínů",
-    "terms.filterBuilder": "Tvorba filtru termínů",
-    "terms.filterIndex": "Filtr termínů {index}",
-    "terms.removeFilter": "Odebrat filtr výrazů {index}",
+    "terms": "Podmínky",
+    "terms.filtersApplied": "{count} použitý(ch) filtr(ů) podmínek",
+    "terms.editCustomPropertyFilters": "Upravit filtry podmínek",
+    "terms.filterBuilder": "Tvorba filtru podmínek",
+    "terms.filterIndex": "Filtr podmínek {index}",
+    "terms.removeFilter": "Odebrat filtr podmínek {index}",
     "terms.deprecated": "ZASTARALÉ: {name}"
 }
