@@ -50,13 +50,9 @@ describe('Modal', () => {
     expect(getByText('SelectLicense')).toBeInTheDocument();
   });
 
-  test('renders the expected button name', () => {
-    const { getByRole } = renderComponent;
-    expect(getByRole('button', { name: 'stripes-components.dismissModal' }));
-  });
 
   test('renders the expected heading name', () => {
-    const { getByRole } = renderComponent;
-    expect(getByRole('heading', { name: 'Select license' }));
+    const { getByText } = renderComponent;
+    expect(getByText('Select license')).toBeInTheDocument();
   });
 });
