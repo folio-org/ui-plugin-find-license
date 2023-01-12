@@ -1,7 +1,6 @@
 import { React } from 'react';
 
 import { renderWithIntl } from '@folio/stripes-erm-testing';
-import { Button } from '@folio/stripes-testing';
 import { MemoryRouter } from 'react-router-dom';
 import translationsProperties from '../../test/helpers';
 import Modal from './Modal';
