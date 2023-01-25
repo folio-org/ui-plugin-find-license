@@ -20,5 +20,5 @@
     "terms.filterBuilder": "Term filter builder",
     "terms.filterIndex": "Term filter {index}",
     "terms.removeFilter": "Remove Term filter {index}",
-    "terms.deprecated": "DEPRECATED: {name}"
+    "terms.deprecated": "不使用: {name}"
 }
