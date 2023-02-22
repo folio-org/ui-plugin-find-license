@@ -116,7 +116,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
         separator={false}
       >
         <FormattedMessage id="ui-plugin-find-license.organizations.selectRole">
-          {placeholder => (
+          {({ 0: placeholder }) => (
             <Selection
               dataOptions={dataOptions}
               onChange={value => filterHandlers.state({ ...activeFilters, role: [value] })}
