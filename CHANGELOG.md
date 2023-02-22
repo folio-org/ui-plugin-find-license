@@ -1,4 +1,6 @@
 # Change history for ui-plugin-find-license
+## 9.1.0 In progress
+
 ## 9.0.2 2023-02-22
 * ERM-2617 Drop unneeded `react-redux`
 * ERM-2593 Increment ui-plugin-find-license to Stripes v8
