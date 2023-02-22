@@ -1,5 +1,5 @@
 # Change history for ui-plugin-find-license
-## 9.0.0 2023-02-22
+## 9.0.1 2023-02-22
 * ERM-2617 Drop unneeded `react-redux`
 * ERM-2593 Increment ui-plugin-find-license to Stripes v8
 * ERM-2531 Remove BigTest/Nightmare dependencies and tests (ui-plugin-find-license)
@@ -11,6 +11,7 @@
 * ERM-2406 Add test coverage for ui-plugin-find-license <Container>
 * ERM-2394 Remove @folio/stripes-testing as direct dependency of ui-plugin-find-license
 * ERM-1305 Add test coverage for ui-plugin-find-license <LicenseSearch>
+* Remove karma test options from github release actions
 
 ## 8.3.0 2022-10-26
 * ERM-2394 Remove @folio/stripes-testing as direct dependency of ui-plugin-find-license
