@@ -14,11 +14,11 @@
     "organizations.selectRole": "Select a role",
     "prop.tags": "タグ",
     "term": "Term",
-    "terms": "Terms",
-    "terms.filtersApplied": "{count} term filters applied",
-    "terms.editCustomPropertyFilters": "Edit term filters",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
+    "terms": "条件",
+    "terms.filtersApplied": "{count} 個の条件フィルターが適用されています",
+    "terms.editCustomPropertyFilters": "条件フィルターを編集する",
+    "terms.filterBuilder": "条件フィルタービルダー",
+    "terms.filterIndex": "条件フィルター {index}",
+    "terms.removeFilter": "条件フィルター{index}を削除",
     "terms.deprecated": "不使用: {name}"
 }
