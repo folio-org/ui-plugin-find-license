@@ -15,10 +15,10 @@
     "prop.tags": "Etiquetas",
     "term": "Plazo",
     "terms": "Términos",
-    "terms.filtersApplied": "{contar} filtros de términos aplicados",
+    "terms.filtersApplied": "{count} filtros de términos aplicados",
     "terms.editCustomPropertyFilters": "Editar filtros de términos",
     "terms.filterBuilder": "Creador de filtros de términos",
     "terms.filterIndex": "Filtro de términos {index}",
     "terms.removeFilter": "Quitar el filtro Término {index}",
-    "terms.deprecated": "SUPRIMIDO: {nombre}"
+    "terms.deprecated": "SUPRIMIDO: {name}"
 }
