@@ -1,6 +1,6 @@
 {
     "meta.title": "Plugin vyhledávání licencí",
-    "selectLicense": "Vyberte licenci",
+    "selectLicense": "Vybrat licenci",
     "licenses": "Licence",
     "searchInputLabel": "Vyhledat licence",
     "prop.endDate": "Datum ukončení",
@@ -11,7 +11,7 @@
     "prop.status": "Stav",
     "prop.type": "Typ",
     "permission.search": "Plugin Vyhledat-licenci: Vyhledávání licencí",
-    "organizations.selectRole": "Vyberte roli",
+    "organizations.selectRole": "Vybrat roli",
     "prop.tags": "Štítky",
     "term": "Podmínka",
     "terms": "Podmínky",
