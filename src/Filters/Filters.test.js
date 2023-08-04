@@ -1,13 +1,15 @@
-import { React } from 'react';
-import { waitFor } from '@testing-library/dom';
+import { MemoryRouter } from 'react-router-dom';
+import { waitFor } from '@folio/jest-config-stripes/testing-library/react';
 
 import {
+  Accordion,
+  Checkbox,
   mockKintComponents,
   mockErmComponents,
+  Selection,
+  SelectionList,
   renderWithIntl
 } from '@folio/stripes-erm-testing';
-import { Accordion, Checkbox, Selection, SelectionList as SelectListInteractor } from '@folio/stripes-testing';
-import { MemoryRouter } from 'react-router-dom';
 
 import { activeFilters, data } from './testResources';
 import translationsProperties from '../../test/helpers';
@@ -128,8 +130,10 @@ describe('Filters', () => {
   });
 
   it('choosing organizations role option', async () => {
-    await Selection({ id: 'stripes-selection-119' }).exists();
-    await Selection().open();
-    await SelectListInteractor({ optionCount: 1 }).exists();
+    await Selection().exists();
+    await waitFor(async () => {
+      await Selection().open();
+    });
+    await SelectionList({ optionCount: 1 }).exists();
   });
 });

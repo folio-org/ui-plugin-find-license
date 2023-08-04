@@ -1,5 +1,3 @@
-import { React } from 'react';
-
 import { mockKintComponents, renderWithIntl } from '@folio/stripes-erm-testing';
 import translationsProperties from '../../test/helpers';
 import LicenseSearch from './LicenseSearch';
