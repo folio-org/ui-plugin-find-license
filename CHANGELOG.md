@@ -1,5 +1,7 @@
 # Change history for ui-plugin-find-license
-## 9.1.0 In progress
+## 10.0.0 In progress
+  * STRIPES-870 BREAKING upgrade react to v18
+    * ERM-2986 upgrade ui-plugin-find-license React to v18
 
 ## 9.0.2 2023-02-22
 * ERM-2617 Drop unneeded `react-redux`
