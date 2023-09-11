@@ -2,6 +2,7 @@
 ## 10.0.0 In progress
   * STRIPES-870 BREAKING upgrade react to v18
     * ERM-2986 upgrade ui-plugin-find-license React to v18
+  * ERM-3031 *BREAKING* bump `react-intl` to `v6.4.4`
 
 ## 9.0.2 2023-02-22
 * ERM-2617 Drop unneeded `react-redux`
