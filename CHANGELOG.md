@@ -1,8 +1,11 @@
 # Change history for ui-plugin-find-license
-## 10.0.0 In progress
-  * STRIPES-870 BREAKING upgrade react to v18
-    * ERM-2986 upgrade ui-plugin-find-license React to v18
-  * ERM-3031 *BREAKING* bump `react-intl` to `v6.4.4`
+## 10.0.0 2023-10-12
+* ERM-3033 *BREAKING* bump `react-intl` to `v6.4.4`
+* ERM-3001 Update Node.js to v18 in Github Actions
+* ERM-2641 Upgrade to Grails 5 (including Hibernate 5.6.x) for Poppy
+  * Added okapi interface dependency on new licenses interface 5.0
+* STRIPES-870 *BREAKING* upgrade react to v18
+  * ERM-2986 upgrade ui-plugin-find-license React to v18
 
 ## 9.0.2 2023-02-22
 * ERM-2617 Drop unneeded `react-redux`
