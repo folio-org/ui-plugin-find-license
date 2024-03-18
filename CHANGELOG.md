@@ -1,6 +1,7 @@
 # Change history for ui-plugin-find-license
 
 ## 10.1.0 In progress
+* ERM-3129 Remove explicit typescript version
 
 ## 10.0.0 2023-10-12
 * ERM-3033 *BREAKING* bump `react-intl` to `v6.4.4`
