@@ -1,5 +1,7 @@
 # Change history for ui-plugin-find-license
 
+## 11.1.0 In progress
+
 ## 11.0.1 2024-03-22
 * ERM-3129 Remove explicit typescript version
 * Bumped folio dependencies
