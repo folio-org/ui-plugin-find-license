@@ -14,7 +14,7 @@ const FILTERS = [
 ];
 
 const CUSTPROP_ENDPOINT = 'licenses/custprops';
-export default function Filters({ activeFilters, data, filterHandlers }) {
+const Filters = ({ activeFilters = { status: [], type: [] }, data, filterHandlers }) => {
   const intl = useIntl();
 
   const [filterState, setFilterState] = useState({
@@ -193,7 +193,7 @@ export default function Filters({ activeFilters, data, filterHandlers }) {
       {renderCustomPropertyFilters()}
     </AccordionSet>
   );
-}
+};
 
 Filters.propTypes = {
   activeFilters: PropTypes.object,
@@ -204,10 +204,4 @@ Filters.propTypes = {
   }),
 };
 
-Filters.defaultProps = {
-  activeFilters: {
-    status: [],
-    type: [],
-  }
-};
-
+export default Filters;
