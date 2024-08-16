@@ -16,7 +16,7 @@
     "term": "Term",
     "terms": "条件",
     "terms.filtersApplied": "{count} 個の条件フィルターが適用されています",
-    "terms.editCustomPropertyFilters": "条件フィルターを編集する",
+    "terms.editCustomPropertyFilters": "条件フィルターの編集",
     "terms.filterBuilder": "条件フィルタービルダー",
     "terms.filterIndex": "条件フィルター {index}",
     "terms.removeFilter": "条件フィルター{index}を削除",
