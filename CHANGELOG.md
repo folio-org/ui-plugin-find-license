@@ -6,6 +6,7 @@
 * ERM-3129 Remove explicit typescript version
 * Bumped folio dependencies
 * *BREAKING* Change interface dependency for licenses to just 6.0
+* FOLIO-4086 Fix GitHub Actions workflow not running for tags
 
 ## 10.0.0 2023-10-12
 * ERM-3033 *BREAKING* bump `react-intl` to `v6.4.4`
