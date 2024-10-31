@@ -1,5 +1,7 @@
 # Change history for ui-plugin-find-license
 
+## 11.2.0 IN PROGRESS
+
 ## 11.1.0 2024-10-31
 * ERM-3384 Update module license and guidance for ui-plugin-find-license
 * ERM-3357 Review and cleanup Module Descriptor for ui-plugin-find-license
