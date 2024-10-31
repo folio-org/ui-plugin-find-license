@@ -1,12 +1,17 @@
 # Change history for ui-plugin-find-license
 
-## 11.1.0 In progress
+## 11.1.0 2024-10-31
+* ERM-3384 Update module license and guidance for ui-plugin-find-license
+* ERM-3357 Review and cleanup Module Descriptor for ui-plugin-find-license
+* ERM-3236 React v19: refactor ui-plugin-find-license away from default props for functional components
+* ERM-3165 Replace moment with dayjs across app suite
+* FOLIO-4086 Fix GitHub Actions workflow not running for tags
+
 
 ## 11.0.1 2024-03-22
 * ERM-3129 Remove explicit typescript version
 * Bumped folio dependencies
 * *BREAKING* Change interface dependency for licenses to just 6.0
-* FOLIO-4086 Fix GitHub Actions workflow not running for tags
 
 ## 10.0.0 2023-10-12
 * ERM-3033 *BREAKING* bump `react-intl` to `v6.4.4`
