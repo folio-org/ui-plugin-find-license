@@ -1,5 +1,5 @@
 {
-    "meta.title": "授權查找器（外掛）",
+    "meta.title": "授權查找器 ( 外掛程式 )",
     "selectLicense": "選擇授權",
     "licenses": "授權憑證",
     "searchInputLabel": "查詢授權",
@@ -10,7 +10,7 @@
     "prop.startDate": "開始日期",
     "prop.status": "狀態",
     "prop.type": "類型",
-    "permission.search": "尋找授權（外掛）：查詢授權",
+    "permission.search": "尋找授權 ( 外掛程式 ) : 查詢授權",
     "organizations.selectRole": "選擇一個身份",
     "prop.tags": "標籤",
     "term": "條款",
