@@ -1,6 +1,8 @@
 # Change history for ui-plugin-find-license
 
-## 11.2.0 IN PROGRESS
+## 12.0.0 2025-03-13
+  * ERM-3617 *BREAKING* Stripes v10 dependencies update
+    * Updated all stripes-* dependencies for the stripes v10 upgrade along with react-intl and formatjs/cli
 
 ## 11.1.0 2024-10-31
 * ERM-3384 Update module license and guidance for ui-plugin-find-license
