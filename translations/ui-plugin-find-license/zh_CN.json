@@ -10,7 +10,7 @@
     "prop.startDate": "起始日期",
     "prop.status": "状态",
     "prop.type": "类型",
-    "permission.search": "查找许可证插件：搜索许可证",
+    "permission.search": "查找许可证插件 : 搜索许可证",
     "organizations.selectRole": "选择一个角色",
     "prop.tags": "标签",
     "term": "术语",
@@ -20,5 +20,5 @@
     "terms.filterBuilder": "条款筛选生成器",
     "terms.filterIndex": "条款筛选{index}",
     "terms.removeFilter": "移除条款筛选{index}",
-    "terms.deprecated": "已弃用： {name}"
+    "terms.deprecated": "已弃用 :  {name}"
 }

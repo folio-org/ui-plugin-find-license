@@ -20,5 +20,5 @@
     "terms.filterBuilder": "條款篩選產生器",
     "terms.filterIndex": "條款篩選器 {index}",
     "terms.removeFilter": "刪除條款篩選器{index}",
-    "terms.deprecated": "已捨棄： {name}"
+    "terms.deprecated": "已捨棄 :  {name}"
 }
