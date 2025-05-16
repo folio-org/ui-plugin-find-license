@@ -2,7 +2,7 @@
     "meta.title": "License Finder Plugin",
     "selectLicense": "Select license",
     "licenses": "Licenses",
-    "searchInputLabel": "Search licenses",
+    "searchInputLabel": "Пошук ліцензій",
     "prop.endDate": "End date",
     "prop.name": "Name",
     "prop.organization": "Organization",
