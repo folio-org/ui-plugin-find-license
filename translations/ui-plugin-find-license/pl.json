@@ -15,10 +15,10 @@
     "prop.tags": "Tagi",
     "term": "Warunek",
     "terms": "Warunki",
-    "terms.filtersApplied": "{count} term filters applied",
+    "terms.filtersApplied": "Zastosowano {count} filtrów warunków",
     "terms.editCustomPropertyFilters": "Edytuj filtry warunków",
-    "terms.filterBuilder": "Term filter builder",
-    "terms.filterIndex": "Term filter {index}",
-    "terms.removeFilter": "Remove Term filter {index}",
+    "terms.filterBuilder": "Kreator filtrów warunków",
+    "terms.filterIndex": "Filtr warunku {index}",
+    "terms.removeFilter": "Usuń filtr warunku {index}",
     "terms.deprecated": "WYCOFANY: {name}"
 }
