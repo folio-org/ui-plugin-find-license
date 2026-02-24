@@ -8,7 +8,7 @@
     "prop.organization": "Organization",
     "prop.organizationRole": "Organization role",
     "prop.startDate": "Start date",
-    "prop.status": "Status",
+    "prop.status": "สถานะ",
     "prop.type": "Type",
     "permission.search": "Find License Plugin: Search licenses",
     "organizations.selectRole": "Select a role",
