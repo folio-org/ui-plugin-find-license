@@ -1,6 +1,7 @@
 # Change history for ui-plugin-find-license
 
-## 12.1.0 IN PROGRESS
+## 12.1.0 2026-04-17
+  * Updated dependencies for Trillium release
 
 ## 12.0.0 2025-03-13
   * ERM-3617 *BREAKING* Stripes v10 dependencies update
