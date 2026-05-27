@@ -1,5 +1,8 @@
 # Change history for ui-plugin-find-license
 
+## 12.1.1 2026-05-28
+  * Updated dependencies for Trillium release
+
 ## 12.1.0 2026-04-17
   * Updated dependencies for Trillium release
 
